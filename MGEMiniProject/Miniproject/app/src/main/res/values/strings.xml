@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Miniproject</string>
-    <string name="reservation_input">Reservationsartikel wählen:</string>
+    <string name="reservation_input">Reservationsartikel wählen</string>
     <string name="reservation_button">Reservieren</string>
+    <string name="email_label">Email</string>
+    <string name="name_label">Name</string>
+    <string name="matrikel_label">Matrikel-Nr.</string>
+    <string name="password_label">Passwort</string>
+    <string name="register_button">Registrieren</string>
+
     <string-array name="reservation_array">
         <item>Hans</item>
         <item>Heidi</item>
