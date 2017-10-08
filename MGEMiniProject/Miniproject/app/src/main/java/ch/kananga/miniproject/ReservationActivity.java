@@ -23,18 +23,8 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
 
         reservationArticleSpinner = (Spinner) findViewById(R.id.reservation_article);
 
-        ArrayList<String> data = new ArrayList<String>();
-        data.add("Hans");
-        data.add("Heidi");
-        data.add("Klara");
-
-        //ArrayAdapter<String> adapter = ArrayAdapter.createFromResource(this, R.layout.support_simple_spinner_dropdown_item, data);
-
         reservationButton = (Button) findViewById(R.id.reservation_button);
         reservationButton.setOnClickListener(this);
-
-        //ArrayAdapter<String> adapter = ArrayAdapter.createFromResource(this, R.layout.support_simple_spinner_dropdown_item, d);
-        //reservationArticleSpinner.setAdapter(adapter);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.reservation_array, R.layout.support_simple_spinner_dropdown_item);
 
