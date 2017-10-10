@@ -1,4 +1,4 @@
-package ch.hsr.mge.gadgeothek.service;
+package ch.kananga.miniproject.service;
 
 enum HttpVerb {
     POST,

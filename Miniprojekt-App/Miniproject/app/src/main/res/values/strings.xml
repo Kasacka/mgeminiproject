@@ -1,4 +1,8 @@
 <resources>
+    <!-- Server Adress for communication gadgetothek -->
+    <string name="serverAddress">https://warm-ocean-14675.herokuapp.com/public</string>
+    <string name="loginAccessError">Something went totally wrong!</string>
+
     <!-- Begin string definition login screen -->
     <string name="loginAppIconImageContentDescription">gadgetothek</string>
     <string name="loginEmailHintText">email address</string>
@@ -7,6 +11,8 @@
     <string name="loginLoginButtonText">login</string>
     <string name="loginRegistrationViewText">New to Gadgetothek? Register now!</string>
     <string name="loginRegistrationButtonText">Registration</string>
+
+    <!-- Begin string definition registration screen -->
 
 
     <!-- Begin other -->

@@ -1,4 +1,4 @@
-package ch.hsr.mge.gadgeothek.service;
+package ch.kananga.miniproject.service;
 
 import android.util.Log;
 
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import ch.hsr.mge.gadgeothek.domain.Gadget;
-import ch.hsr.mge.gadgeothek.domain.Loan;
-import ch.hsr.mge.gadgeothek.domain.Reservation;
+import ch.kananga.miniproject.domain.Gadget;
+import ch.kananga.miniproject.domain.Loan;
+import ch.kananga.miniproject.domain.Reservation;
 
 public class LibraryService {
     

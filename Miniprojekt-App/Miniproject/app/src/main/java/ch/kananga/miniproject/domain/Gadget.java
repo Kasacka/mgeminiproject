@@ -1,4 +1,4 @@
-package ch.hsr.mge.gadgeothek.domain;
+package ch.kananga.miniproject.domain;
 
 import java.util.UUID;
 

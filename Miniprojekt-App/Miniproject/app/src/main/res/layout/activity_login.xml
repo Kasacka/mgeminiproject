@@ -1,82 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                tools:context="ch.kananga.miniproject.LoginActivity" >
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/loginCoordinatorLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/loginAppImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/gadget_app"
-        android:contentDescription="@string/loginAppIconImageContentDescription"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/loginEmailText"/>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    tools:context="ch.kananga.miniproject.LoginActivity" >
 
-    <EditText
-        android:id="@+id/loginEmailText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="@string/loginEmailHintText"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/loginAppImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/gadget_app"
+            android:contentDescription="@string/loginAppIconImageContentDescription"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/loginEmailText"/>
 
-    <EditText
-        android:id="@+id/loginPasswordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="@string/loginPasswordHintText"
-        android:layout_below="@+id/loginEmailText"
-        android:layout_alignStart="@+id/loginEmailText"
-        android:layout_alignLeft="@+id/loginEmailText"
-        android:layout_marginTop="18dp"/>
+        <EditText
+            android:id="@+id/loginEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="@string/loginEmailHintText"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
 
-    <Switch
-        android:id="@+id/loginKeepSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loginKeepSwitchText"
-        android:layout_below="@+id/loginPasswordText"
-        android:layout_alignStart="@+id/loginPasswordText"
-        android:layout_alignLeft="@+id/loginPasswordText"
-        android:layout_marginTop="12dp"
-        android:layout_alignEnd="@+id/loginPasswordText"
-        android:layout_alignRight="@+id/loginPasswordText" />
+        <EditText
+            android:id="@+id/loginPasswordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="@string/loginPasswordHintText"
+            android:layout_below="@+id/loginEmailText"
+            android:layout_alignStart="@+id/loginEmailText"
+            android:layout_alignLeft="@+id/loginEmailText"
+            android:layout_marginTop="18dp"/>
 
-    <Button
-        android:id="@+id/loginLoginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loginLoginButtonText"
-        android:layout_below="@+id/loginKeepSwitch"
-        android:layout_marginTop="12dp"
-        android:layout_centerHorizontal="true"/>
+        <Switch
+            android:id="@+id/loginKeepSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginKeepSwitchText"
+            android:layout_below="@+id/loginPasswordText"
+            android:layout_alignStart="@+id/loginPasswordText"
+            android:layout_alignLeft="@+id/loginPasswordText"
+            android:layout_marginTop="12dp"
+            android:layout_alignEnd="@+id/loginPasswordText"
+            android:layout_alignRight="@+id/loginPasswordText" />
 
-    <TextView
-        android:id="@+id/loginRegistrationText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loginRegistrationViewText"
-        android:layout_above="@+id/loginRegistrationbutton"
-        android:layout_alignLeft="@+id/loginKeepSwitch"
-        android:layout_alignStart="@+id/loginKeepSwitch"/>
+        <Button
+            android:id="@+id/loginLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginLoginButtonText"
+            android:layout_below="@+id/loginKeepSwitch"
+            android:layout_marginTop="12dp"
+            android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:id="@+id/loginRegistrationbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loginRegistrationButtonText"
-        android:layout_marginBottom="12dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/loginRegistrationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginRegistrationViewText"
+            android:layout_above="@+id/loginRegistrationbutton"
+            android:layout_alignLeft="@+id/loginKeepSwitch"
+            android:layout_alignStart="@+id/loginKeepSwitch"/>
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/loginRegistrationbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginRegistrationButtonText"
+            android:layout_marginBottom="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
