@@ -1,7 +1,9 @@
-package ch.kananga.miniproject;
+package ch.kananga.miniproject.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import ch.kananga.miniproject.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package ch.kananga.miniproject;
+package ch.kananga.miniproject.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.zip.Adler32;
+
+import ch.kananga.miniproject.R;
 
 public class ReservationActivity extends AppCompatActivity implements View.OnClickListener {
     private Spinner reservationArticleSpinner;

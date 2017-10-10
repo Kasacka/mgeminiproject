@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ch.kananga.miniproject.MainActivity">
+    tools:context="ch.kananga.miniproject.LoginActivity">
 
     <Button
         android:id="@+id/register_button"

@@ -6,14 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import ch.kananga.miniproject.ui.RegisterActivity;
+import ch.kananga.miniproject.ui.ReservationActivity;
+
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Button reservationViewButton;
     private Button registerButton;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         
         reservationViewButton = (Button) findViewById(R.id.reservation_view_button);
         registerButton = (Button) findViewById(R.id.register_button);

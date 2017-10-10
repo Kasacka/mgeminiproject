@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ch.kananga.miniproject.RegisterActivity">
+    tools:context="ch.kananga.miniproject.ui.RegisterActivity">
 
     <TextView
         android:id="@+id/email_label"
