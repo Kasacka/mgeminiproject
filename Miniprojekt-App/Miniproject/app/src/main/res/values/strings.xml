@@ -1,4 +1,15 @@
 <resources>
+    <!-- Begin string definition login screen -->
+    <string name="loginAppIconImageContentDescription">gadgetothek</string>
+    <string name="loginEmailHintText">email address</string>
+    <string name="loginPasswordHintText">password</string>
+    <string name="loginKeepSwitchText">keep me logged in</string>
+    <string name="loginLoginButtonText">login</string>
+    <string name="loginRegistrationViewText">New to Gadgetothek? Register now!</string>
+    <string name="loginRegistrationButtonText">Registration</string>
+
+
+    <!-- Begin other -->
     <string name="app_name">Miniproject</string>
     <string name="reservation_input">Reservationsartikel wählen</string>
     <string name="reservation_button">Reservieren</string>

@@ -9,55 +9,74 @@
                 tools:context="ch.kananga.miniproject.LoginActivity" >
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/loginAppImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/gadget_app"
+        android:contentDescription="@string/loginAppIconImageContentDescription"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/editText"/>
+        android:layout_above="@+id/loginEmailText"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/loginEmailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="eMail Address"
+        android:hint="@string/loginEmailHintText"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/loginPasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_below="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_marginTop="22dp"/>
+        android:hint="@string/loginPasswordHintText"
+        android:layout_below="@+id/loginEmailText"
+        android:layout_alignStart="@+id/loginEmailText"
+        android:layout_alignLeft="@+id/loginEmailText"
+        android:layout_marginTop="18dp"/>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/loginKeepSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Keep me logged in"
-        android:layout_below="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_marginTop="31dp"
-        android:layout_alignEnd="@+id/editText2"
-        android:layout_alignRight="@+id/editText2" />
+        android:text="@string/loginKeepSwitchText"
+        android:layout_below="@+id/loginPasswordText"
+        android:layout_alignStart="@+id/loginPasswordText"
+        android:layout_alignLeft="@+id/loginPasswordText"
+        android:layout_marginTop="12dp"
+        android:layout_alignEnd="@+id/loginPasswordText"
+        android:layout_alignRight="@+id/loginPasswordText" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/loginLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/loginLoginButtonText"
+        android:layout_below="@+id/loginKeepSwitch"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/loginRegistrationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loginRegistrationViewText"
+        android:layout_above="@+id/loginRegistrationbutton"
+        android:layout_alignLeft="@+id/loginKeepSwitch"
+        android:layout_alignStart="@+id/loginKeepSwitch"/>
+
+    <Button
+        android:id="@+id/loginRegistrationbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loginRegistrationButtonText"
+        android:layout_marginBottom="12dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Login"/>
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
