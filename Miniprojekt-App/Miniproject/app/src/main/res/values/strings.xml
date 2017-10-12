@@ -1,0 +1,33 @@
+<resources>
+    <!-- Server Adress for communication gadgetothek -->
+    <string name="serverAddress">https://warm-ocean-14675.herokuapp.com/public</string>
+    <string name="loginAccessError">Something went totally wrong!</string>
+
+    <!-- Begin string definition login screen -->
+    <string name="loginAppIconImageContentDescription">gadgetothek</string>
+    <string name="loginEmailHintText">email address</string>
+    <string name="loginPasswordHintText">password</string>
+    <string name="loginKeepSwitchText">keep me logged in</string>
+    <string name="loginLoginButtonText">login</string>
+    <string name="loginRegistrationViewText">New to Gadgetothek? Register now!</string>
+    <string name="loginRegistrationButtonText">Registration</string>
+
+    <!-- Begin string definition registration screen -->
+
+
+    <!-- Begin other -->
+    <string name="app_name">Miniproject</string>
+    <string name="reservation_input">Reservationsartikel wählen</string>
+    <string name="reservation_button">Reservieren</string>
+    <string name="email_label">Email</string>
+    <string name="name_label">Name</string>
+    <string name="matrikel_label">Matrikel-Nr.</string>
+    <string name="password_label">Passwort</string>
+    <string name="register_button">Registrieren</string>
+
+    <string-array name="reservation_array">
+        <item>Hans</item>
+        <item>Heidi</item>
+        <item>Klara</item>
+    </string-array>
+</resources>
