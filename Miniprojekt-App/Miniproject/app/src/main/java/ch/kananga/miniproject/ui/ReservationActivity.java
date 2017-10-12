@@ -6,13 +6,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.zip.Adler32;
-
 import ch.kananga.miniproject.R;
+import ch.kananga.miniproject.service.LibraryService;
 
 public class ReservationActivity extends AppCompatActivity implements View.OnClickListener {
     private Spinner reservationArticleSpinner;
@@ -23,9 +18,11 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
-        reservationArticleSpinner = (Spinner) findViewById(R.id.reservation_article);
+        LibraryService.setServerAddress(getString(R.string.serverAddress));
 
-        reservationButton = (Button) findViewById(R.id.reservation_button);
+        reservationArticleSpinner = findViewById(R.id.reservation_article);
+
+        reservationButton = findViewById(R.id.reservation_button);
         reservationButton.setOnClickListener(this);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.reservation_array, R.layout.support_simple_spinner_dropdown_item);
@@ -36,11 +33,7 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
         if (view == reservationButton) {
-            onReservationButtonClick();
-        }
-    }
 
-    private void onReservationButtonClick() {
-        Toast.makeText(this, "hallo", Toast.LENGTH_LONG).show();
+        }
     }
 }

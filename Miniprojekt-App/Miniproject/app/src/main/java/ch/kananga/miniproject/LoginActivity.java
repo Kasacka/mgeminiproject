@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.support.design.widget.Snackbar;
 import android.widget.ImageView;
-
+import android.widget.Toast;
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 import ch.kananga.miniproject.ui.RegisterActivity;
@@ -47,6 +46,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivity(new Intent(this, RegisterActivity.class));
     }
 
+    private void showToast() {
+        Toast.makeText(this, R.string.loginAccessError, Toast.LENGTH_LONG)
+                .show();
+    }
+
     private void onLoginButtonClick() {
         String username   = ((EditText) findViewById(R.id.loginEmailText)).getText().toString();
         String password   = ((EditText) findViewById(R.id.loginPasswordText)).getText().toString();
@@ -57,15 +61,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onCompletion(Boolean success)
             {
                 System.out.println("in here with " + success.toString() + "...");
+
                 if (success) {
                     startActivity(new Intent(LoginActivity.this, ReservationActivity.class));
                 }
                 else {
-                    Snackbar errorSnack = Snackbar.make(
-                            findViewById(R.id.loginCoordinatorLayout),
-                            R.string.loginAccessError,
-                            Snackbar.LENGTH_LONG);
-                    errorSnack.show();
+                    showToast();
                 }
             }
 
