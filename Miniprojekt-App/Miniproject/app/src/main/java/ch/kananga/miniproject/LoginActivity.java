@@ -11,18 +11,23 @@ import android.widget.ImageView;
 
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
+import ch.kananga.miniproject.ui.RegisterActivity;
 import ch.kananga.miniproject.ui.ReservationActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Button loginButton;
+    private Button loginRegistrationButton;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginButton = (Button) findViewById(R.id.loginLoginButton);
+        loginButton = findViewById(R.id.loginLoginButton);
         loginButton.setOnClickListener(this);
+
+        loginRegistrationButton = findViewById(R.id.loginRegistrationButton);
+        loginRegistrationButton.setOnClickListener(this);
 
         LibraryService.setServerAddress(getString(R.string.serverAddress));
     }
@@ -31,9 +36,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view == loginButton) {
             onLoginButtonClick();
+        } else if (view == loginRegistrationButton) {
+            onLoginRegistrationButtonClick();
         } else {
             throw new AssertionError("event handler not implemented");
         }
+    }
+
+    private void onLoginRegistrationButtonClick() {
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     private void onLoginButtonClick() {

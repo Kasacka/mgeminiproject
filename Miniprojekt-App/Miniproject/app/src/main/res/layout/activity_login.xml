@@ -73,12 +73,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loginRegistrationViewText"
-            android:layout_above="@+id/loginRegistrationbutton"
+            android:layout_above="@+id/loginRegistrationButton"
             android:layout_alignLeft="@+id/loginKeepSwitch"
             android:layout_alignStart="@+id/loginKeepSwitch"/>
 
         <Button
-            android:id="@+id/loginRegistrationbutton"
+            android:id="@+id/loginRegistrationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loginRegistrationButtonText"
