@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".ui.ReservationActivity" />
         <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.LoanActivity"></activity>
         <activity android:name=".ui.ReservationListActivity"></activity>
     </application>
 
