@@ -1,4 +1,0 @@
-#Sun Oct 08 21:05:16 CEST 2017
-base.0=/Users/joelegger/Desktop/Schule/MGE/Miniprojekt/MGEMiniProject/Miniproject/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4
-renamed.0=classes.dex
-file.0=/Users/joelegger/Desktop/Schule/MGE/Miniprojekt/MGEMiniProject/Miniproject/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex

@@ -1,7 +1,0 @@
-#Mon Oct 09 12:42:53 CEST 2017
-base.0=/Users/joelegger/Desktop/Schule/MGE/Miniprojekt/MGEMiniProject/Miniproject/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c81e46585899c56f7b20ebecf1a76b3d838a8cbc
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/joelegger/Desktop/Schule/MGE/Miniprojekt/MGEMiniProject/Miniproject/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_841f6e0b4dfa888bbe1d4251d6a298b57ec30f5b/classes.dex
-base.1=/Users/joelegger/Desktop/Schule/MGE/Miniprojekt/MGEMiniProject/Miniproject/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_841f6e0b4dfa888bbe1d4251d6a298b57ec30f5b
-file.0=/Users/joelegger/Desktop/Schule/MGE/Miniprojekt/MGEMiniProject/Miniproject/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c81e46585899c56f7b20ebecf1a76b3d838a8cbc/classes.dex
