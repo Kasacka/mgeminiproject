@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ch.kananga.miniproject.R;
@@ -18,7 +20,7 @@ import ch.kananga.miniproject.ui.viewList.LoanAdapter;
 
 public class LoanActivity extends AppCompatActivity {
 
-    private List<Loan> loans;
+    private List<Loan> loans = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,9 @@ public class LoanActivity extends AppCompatActivity {
             lentGadgets.setVisibility(View.VISIBLE);
             emptyText.setVisibility(View.GONE);
         }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     public void showError(String errorText) {

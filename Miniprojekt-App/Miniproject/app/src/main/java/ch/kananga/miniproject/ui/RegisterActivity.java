@@ -43,8 +43,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    private void startReservationActivity() {
-        startActivity(new Intent(this, ReservationActivity.class));
+    private void startLoanActivity() {
+        startActivity(new Intent(this, LoanActivity.class));
     }
 
     private void onRegisterButtonClick() {
@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onCompletion(Boolean input) {
                 Log.d("DEBUG", "Login Successful");
-                startReservationActivity();
+                startLoanActivity();
             }
 
             @Override

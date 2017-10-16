@@ -1,17 +1,18 @@
 package ch.kananga.miniproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
+import ch.kananga.miniproject.ui.LoanActivity;
 import ch.kananga.miniproject.ui.RegisterActivity;
-import ch.kananga.miniproject.ui.ReservationActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Button loginButton;
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 System.out.println("in here with " + success.toString() + "...");
 
                 if (success) {
-                    startActivity(new Intent(LoginActivity.this, ReservationActivity.class));
+                    startLoanActivity();
                 }
                 else {
                     showToast();
@@ -79,5 +80,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         };
 
         LibraryService.login(username, password, result);
+    }
+
+    private void startLoanActivity() {
+        startActivity(new Intent(this, LoanActivity.class));
     }
 }
