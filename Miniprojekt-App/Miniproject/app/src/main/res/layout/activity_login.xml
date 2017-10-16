@@ -19,11 +19,20 @@
             android:id="@+id/loginAppImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/gadget_app"
             android:contentDescription="@string/loginAppIconImageContentDescription"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@+id/loginEmailText"/>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/loginEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginEmailLabelText"
+            android:layout_below="@+id/loginAppImageView"
+            android:layout_alignLeft="@+id/loginEmailText"
+            android:layout_alignStart="@+id/loginEmailText" />
 
         <EditText
             android:id="@+id/loginEmailText"
@@ -32,8 +41,18 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             android:hint="@string/loginEmailHintText"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@+id/loginEmailLabel"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/loginPasswordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginPasswordLabelText"
+            android:layout_below="@+id/loginEmailText"
+            android:layout_alignLeft="@+id/loginPasswordText"
+            android:layout_alignStart="@+id/loginPasswordText"
+            android:layout_marginTop="8dp"/>
 
         <EditText
             android:id="@+id/loginPasswordText"
@@ -42,10 +61,8 @@
             android:ems="10"
             android:inputType="textPassword"
             android:hint="@string/loginPasswordHintText"
-            android:layout_below="@+id/loginEmailText"
-            android:layout_alignStart="@+id/loginEmailText"
-            android:layout_alignLeft="@+id/loginEmailText"
-            android:layout_marginTop="18dp"/>
+            android:layout_below="@+id/loginPasswordLabel"
+            android:layout_centerHorizontal="true" />
 
         <Switch
             android:id="@+id/loginKeepSwitch"
@@ -55,7 +72,7 @@
             android:layout_below="@+id/loginPasswordText"
             android:layout_alignStart="@+id/loginPasswordText"
             android:layout_alignLeft="@+id/loginPasswordText"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:layout_alignEnd="@+id/loginPasswordText"
             android:layout_alignRight="@+id/loginPasswordText" />
 
@@ -65,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="@string/loginLoginButtonText"
             android:layout_below="@+id/loginKeepSwitch"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:layout_centerHorizontal="true"/>
 
         <TextView
@@ -82,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loginRegistrationButtonText"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="16dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
     </RelativeLayout>

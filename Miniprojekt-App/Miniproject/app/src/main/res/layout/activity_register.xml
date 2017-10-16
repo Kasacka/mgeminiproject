@@ -1,66 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginCoordinatorLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="ch.kananga.miniproject.ui.RegisterActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/email_label"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/email_label" />
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:context="ch.kananga.miniproject.LoginActivity">
 
-    <EditText
-        android:id="@+id/email_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+        <ImageView
+            android:id="@+id/registrationAppImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/gadget_app"
+            android:contentDescription="@string/registrationAppIconImageContentDescription"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/name_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name_label" />
+        <TextView
+            android:id="@+id/registrationEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrationEmailLabelText"
+            android:layout_below="@+id/registrationAppImageView"
+            android:layout_alignLeft="@+id/registrationEmailText"
+            android:layout_alignStart="@+id/registrationEmailText" />
 
-    <EditText
-        android:id="@+id/name_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/registrationEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/registrationEmailHintText"
+            android:inputType="textEmailAddress"
+            android:layout_below="@+id/registrationEmailLabel"
+            android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/matrikel_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/matrikel_label" />
+        <TextView
+            android:id="@+id/registrationNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrationNameLabelText"
+            android:layout_below="@+id/registrationEmailText"
+            android:layout_alignLeft="@+id/registrationNameText"
+            android:layout_alignStart="@+id/registrationNameText"
+            android:layout_marginTop="8dp" />
 
-    <EditText
-        android:id="@+id/matrikel_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/registrationNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/registrationNameHintText"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/registrationNameLabel"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/password_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/password_label" />
+        <TextView
+            android:id="@+id/registrationMatrikelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrationMatrikelLabelText"
+            android:layout_below="@+id/registrationNameText"
+            android:layout_alignLeft="@+id/registrationMatrikelText"
+            android:layout_alignStart="@+id/registrationMatrikelText"
+            android:layout_marginTop="8dp" />
 
-    <EditText
-        android:id="@+id/password_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/registrationMatrikelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/registrationMatrikelHintText"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/registrationMatrikelLabel"
+            android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/register_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register_button" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/registrationPasswordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrationPasswordLabelText"
+            android:layout_below="@+id/registrationMatrikelText"
+            android:layout_alignLeft="@+id/registrationPasswordText"
+            android:layout_alignStart="@+id/registrationPasswordText"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/registrationPasswordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/registrationPasswordHintText"
+            android:inputType="textPassword"
+            android:layout_below="@+id/registrationPasswordLabel"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/registrationRegisterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrationRegisterButtonText"
+            android:layout_below="@+id/registrationPasswordText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp" />
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

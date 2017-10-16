@@ -13,22 +13,13 @@ import ch.kananga.miniproject.service.LibraryService;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private Button registerButton;
-    private TextView emailInput;
-    private TextView passwordInput;
-    private TextView matrikelInput;
-    private TextView nameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registerButton = findViewById(R.id.register_button);
-        emailInput = findViewById(R.id.email_input);
-        passwordInput = findViewById(R.id.password_input);
-        matrikelInput = findViewById(R.id.matrikel_input);
-        nameInput = findViewById(R.id.name_input);
-
+        registerButton = findViewById(R.id.registrationRegisterButton);
         registerButton.setOnClickListener(this);
 
         LibraryService.setServerAddress(getString(R.string.serverAddress));
@@ -48,10 +39,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void onRegisterButtonClick() {
-        final String email = emailInput.getText().toString();
-        final String password = passwordInput.getText().toString();
-        final String name = nameInput.getText().toString();
-        final String matrikelNr = matrikelInput.getText().toString();
+        final String email = ((TextView)findViewById(R.id.registrationEmailText)).getText().toString();
+        final String password = ((TextView)findViewById(R.id.registrationPasswordText)).getText().toString();
+        final String name = ((TextView)findViewById(R.id.registrationNameText)).getText().toString();
+        final String matrikelNr = ((TextView)findViewById(R.id.registrationMatrikelText)).getText().toString();
 
         final Callback<Boolean> loginCallback = new Callback<Boolean>() {
             @Override
@@ -69,8 +60,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         Callback<Boolean> registerCallback = new Callback<Boolean>() {
             @Override
             public void onCompletion(Boolean input) {
-
-
                 LibraryService.login(email, password, loginCallback);
             }
 
