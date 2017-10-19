@@ -1,17 +1,16 @@
 package ch.kananga.miniproject.ui;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends BaseActivity implements View.OnClickListener {
     private Button registerButton;
     private TextView emailInput;
     private TextView passwordInput;
@@ -23,11 +22,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registerButton = findViewById(R.id.register_button);
-        emailInput = findViewById(R.id.email_input);
-        passwordInput = findViewById(R.id.password_input);
-        matrikelInput = findViewById(R.id.matrikel_input);
-        nameInput = findViewById(R.id.name_input);
+        registerButton = (Button) findViewById(R.id.register_button);
+        emailInput = (TextView) findViewById(R.id.email_input);
+        passwordInput = (TextView) findViewById(R.id.password_input);
+        matrikelInput = (TextView) findViewById(R.id.matrikel_input);
+        nameInput = (TextView) findViewById(R.id.name_input);
 
         registerButton.setOnClickListener(this);
 
@@ -41,10 +40,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         } else {
             throw new AssertionError("view not found");
         }
-    }
-
-    private void startLoanActivity() {
-        startActivity(new Intent(this, LoanActivity.class));
     }
 
     private void onRegisterButtonClick() {

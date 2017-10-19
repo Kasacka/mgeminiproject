@@ -1,16 +1,17 @@
 package ch.kananga.miniproject.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
-import android.widget.Toast;
+
 import java.util.List;
+
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.domain.Reservation;
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 
-public class ReservationListActivity extends AppCompatActivity {
+public class ReservationListActivity extends BaseActivity {
     private ListView reservationListView;
 
     @Override
@@ -18,13 +19,12 @@ public class ReservationListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_list);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         LibraryService.setServerAddress(getString(R.string.serverAddress));
 
-        reservationListView = findViewById(R.id.reservation_list_view);
-    }
-
-    private void showError(String errorMessage) {
-        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
+        reservationListView = (ListView) findViewById(R.id.reservation_list_view);
     }
 
     private void loadReservationList() {
@@ -36,7 +36,7 @@ public class ReservationListActivity extends AppCompatActivity {
 
             @Override
             public void onError(String message) {
-                showError(message);
+                showToast(message);
             }
         });
     }

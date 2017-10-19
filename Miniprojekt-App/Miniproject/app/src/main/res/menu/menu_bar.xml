@@ -12,4 +12,14 @@
         android:title="Reservations"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/libraries"
+        android:title="Change library"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="Log out"
+        app:showAsAction="never" />
+
 </menu>

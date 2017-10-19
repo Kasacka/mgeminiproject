@@ -1,13 +1,11 @@
 package ch.kananga.miniproject.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 import ch.kananga.miniproject.ui.viewList.LoanAdapter;
 
-public class LoanActivity extends AppCompatActivity {
+public class LoanActivity extends BaseActivity {
 
     private List<Loan> loans = new ArrayList<>();
 
@@ -26,6 +24,9 @@ public class LoanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loan);
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         LibraryService.setServerAddress(getString(R.string.serverAddress));
 
@@ -48,7 +49,7 @@ public class LoanActivity extends AppCompatActivity {
             @Override
             public void onError(String message)
             {
-                showError("Something went wrong while get all customer loans");
+                showToast("Something went wrong while get all customer loans");
             }
         };
         LibraryService.getLoansForCustomer(result);
@@ -64,12 +65,6 @@ public class LoanActivity extends AppCompatActivity {
             lentGadgets.setVisibility(View.VISIBLE);
             emptyText.setVisibility(View.GONE);
         }
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 
-    public void showError(String errorText) {
-        Toast.makeText(this, errorText, Toast.LENGTH_LONG).show();
-    }
 }
