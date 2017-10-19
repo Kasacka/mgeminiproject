@@ -21,6 +21,9 @@ public class BaseActivity extends AppCompatActivity {
     public void startLoanActivity() {
         startActivity(new Intent(this, LoanActivity.class));
     }
+    public void startRegisterActivity() {
+        startActivity(new Intent(this, RegisterActivity.class));
+    }
     private void startReservationListActivity() {
         startActivity(new Intent(this, ReservationListActivity.class));
     }

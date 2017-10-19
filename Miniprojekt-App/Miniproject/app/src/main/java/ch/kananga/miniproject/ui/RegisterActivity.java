@@ -62,6 +62,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
             @Override
             public void onError(String message) {
+                showToast(message);
                 Log.d("ERROR", "onError message=" + message);
             }
         };
