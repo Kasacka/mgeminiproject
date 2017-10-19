@@ -16,11 +16,11 @@ import ch.kananga.miniproject.domain.Reservation;
 
 public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHolder>{
 
-    private List<Reservation> dataset;
+    private List<Reservation> reservations;
     private SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yy", Locale.GERMAN);
 
     public ReservationAdapter(List<Reservation> reservations) {
-        dataset = reservations;
+        this.reservations = reservations;
     }
 
     @Override
@@ -34,13 +34,13 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
 
     @Override
     public void onBindViewHolder(ReservationViewHolder holder, int position) {
-        final Reservation reservation = dataset.get(position);
+        final Reservation reservation = reservations.get(position);
         holder.gadgetName.setText(reservation.getGadget().getName());
         holder.reservationDate.setText(formatter.format(reservation.getReservationDate()));
     }
 
     @Override
     public int getItemCount() {
-        return dataset.size();
+        return reservations.size();
     }
 }

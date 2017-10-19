@@ -12,10 +12,12 @@ import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 import ch.kananga.miniproject.ui.RegisterActivity;
 import ch.kananga.miniproject.ui.ReservationActivity;
+import ch.kananga.miniproject.ui.ReservationListActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Button loginButton;
     private Button loginRegistrationButton;
+    private Button reservationButtonLink;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         loginButton = findViewById(R.id.loginLoginButton);
         loginButton.setOnClickListener(this);
+
+        reservationButtonLink = findViewById(R.id.reservation_button_link);
+        reservationButtonLink.setOnClickListener(this);
 
         loginRegistrationButton = findViewById(R.id.loginRegistrationButton);
         loginRegistrationButton.setOnClickListener(this);
@@ -37,9 +42,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             onLoginButtonClick();
         } else if (view == loginRegistrationButton) {
             onLoginRegistrationButtonClick();
-        } else {
+        } else if (view == reservationButtonLink) {
+            onReservationButtonLinkClick();
+        }
+        else {
             throw new AssertionError("event handler not implemented");
         }
+    }
+
+    private void onReservationButtonLinkClick() {
+        startActivity(new Intent(this, ReservationListActivity.class));
     }
 
     private void onLoginRegistrationButtonClick() {
