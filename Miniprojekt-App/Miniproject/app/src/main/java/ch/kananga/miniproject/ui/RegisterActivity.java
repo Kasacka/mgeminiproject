@@ -1,5 +1,6 @@
 package ch.kananga.miniproject.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +22,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         registerButton = findViewById(R.id.registrationRegisterButton);
         registerButton.setOnClickListener(this);
 
-        LibraryService.setServerAddress(getString(R.string.serverAddress));
+        SharedPreferences settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
+        LibraryService.setServerAddress(settings.getString(getString(R.string.serverAddress), ""));
     }
 
     @Override

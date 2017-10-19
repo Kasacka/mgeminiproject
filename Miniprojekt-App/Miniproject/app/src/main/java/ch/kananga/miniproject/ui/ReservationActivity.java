@@ -1,6 +1,7 @@
 package ch.kananga.miniproject.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -28,7 +29,8 @@ public class ReservationActivity extends BaseActivity implements View.OnClickLis
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        LibraryService.setServerAddress(getString(R.string.serverAddress));
+        SharedPreferences settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
+        LibraryService.setServerAddress(settings.getString(getString(R.string.serverAddress), ""));
 
         reservationArticleSpinner = (Spinner) findViewById(R.id.reservation_article);
 

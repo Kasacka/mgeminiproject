@@ -2,8 +2,10 @@
     <!-- App Data -->
     <string name="app_name">Miniproject</string>
 
+    <string name="settings">settings</string>
+
     <!-- Server Adress for communication gadgetothek -->
-    <string name="serverAddress">https://warm-ocean-14675.herokuapp.com/public</string>
+    <string name="serverAddress">serverAddress</string>
 
     <!-- Begin string definition login screen -->
     <string name="loginAppIconImageContentDescription">gadgetothek</string>

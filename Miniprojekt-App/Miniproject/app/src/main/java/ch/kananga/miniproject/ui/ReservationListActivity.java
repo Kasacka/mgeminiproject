@@ -1,5 +1,6 @@
 package ch.kananga.miniproject.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,7 +27,8 @@ public class ReservationListActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        LibraryService.setServerAddress(getString(R.string.serverAddress));
+        SharedPreferences settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
+        LibraryService.setServerAddress(settings.getString(getString(R.string.serverAddress), ""));
 
         reservationListView = findViewById(R.id.reservation_list_view);
         reservationListView.setLayoutManager(new LinearLayoutManager(this));
@@ -49,7 +51,6 @@ public class ReservationListActivity extends BaseActivity {
                     reservationListView.setVisibility(View.VISIBLE);
                     emptyText.setVisibility(View.GONE);
                 }
-                showToast(reservationListView.getVisibility() + " = reservationList");
             }
 
             @Override
