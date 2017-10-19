@@ -1,20 +1,21 @@
 package ch.kananga.miniproject.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
+
 import java.util.List;
+
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.domain.Gadget;
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 
-public class ReservationActivity extends AppCompatActivity implements View.OnClickListener {
+public class ReservationActivity extends BaseActivity implements View.OnClickListener {
     private Spinner reservationArticleSpinner;
     private Button reservationButton;
     private Button reservationListButton;
@@ -24,16 +25,18 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         LibraryService.setServerAddress(getString(R.string.serverAddress));
 
-        reservationArticleSpinner = findViewById(R.id.reservation_article);
+        reservationArticleSpinner = (Spinner) findViewById(R.id.reservation_article);
 
         loadArticles();
-
-        reservationButton = findViewById(R.id.reservation_button);
+        reservationButton = (Button) findViewById(R.id.reservation_button);
         reservationButton.setOnClickListener(this);
 
-        reservationListButton = findViewById(R.id.reservation_list_button);
+        reservationListButton = (Button) findViewById(R.id.reservation_list_button);
         reservationListButton.setOnClickListener(this);
     }
 
@@ -58,12 +61,12 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
         LibraryService.reserveGadget(gadget, new Callback<Boolean>() {
             @Override
             public void onCompletion(Boolean input) {
-                showMessage("Article reserved");
+                showToast("Article reserved");
             }
 
             @Override
             public void onError(String message) {
-                showMessage(message);
+                showToast(message);
             }
         });
     }
@@ -77,7 +80,7 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
 
             @Override
             public void onError(String message) {
-                showMessage(message);
+                showToast(message);
             }
         });
     }
@@ -90,7 +93,4 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
         reservationArticleSpinner.setAdapter(spinnerArrayAdapter);
     }
 
-    private void showMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
 }

@@ -26,8 +26,8 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanViewHolder>{
     public LoanViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View v = layoutInflater.inflate(R.layout.loan_rowlayout, parent, false);
-        TextView gadgetName = (TextView) v.findViewById(R.id.gadgetName);
-        TextView returnDate = (TextView) v.findViewById(R.id.returnDate);
+        TextView gadgetName = v.findViewById(R.id.gadgetName);
+        TextView returnDate = v.findViewById(R.id.returnDate);
         return new LoanViewHolder(v, gadgetName, returnDate);
     }
 

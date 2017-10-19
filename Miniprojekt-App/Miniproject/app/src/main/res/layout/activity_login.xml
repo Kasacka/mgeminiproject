@@ -13,7 +13,7 @@
                     android:layout_height="match_parent"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    tools:context="ch.kananga.miniproject.LoginActivity" >
+                    tools:context="ch.kananga.miniproject.ui.LoginActivity" >
 
         <ImageView
             android:id="@+id/loginAppImageView"

@@ -1,17 +1,16 @@
 package ch.kananga.miniproject.ui;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends BaseActivity implements View.OnClickListener {
     private Button registerButton;
 
     @Override
@@ -34,10 +33,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    private void startReservationActivity() {
-        startActivity(new Intent(this, ReservationActivity.class));
-    }
-
     private void onRegisterButtonClick() {
         final String email = ((TextView)findViewById(R.id.registrationEmailText)).getText().toString();
         final String password = ((TextView)findViewById(R.id.registrationPasswordText)).getText().toString();
@@ -48,12 +43,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onCompletion(Boolean input) {
                 Log.d("DEBUG", "Login Successful");
-                startReservationActivity();
+                startLoanActivity();
             }
 
             @Override
             public void onError(String message) {
-
+                showToast(message);
             }
         };
 
