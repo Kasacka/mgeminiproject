@@ -1,0 +1,15 @@
+{
+  "name": "uitestat",
+  "description": "Testat Server",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.4.1",
+    "ws": "latest"
+  },
+  "author": "",
+  "license": "ISC"
+}
