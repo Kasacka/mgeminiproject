@@ -12,12 +12,12 @@ import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 import ch.kananga.miniproject.ui.RegisterActivity;
 import ch.kananga.miniproject.ui.ReservationActivity;
-import ch.kananga.miniproject.ui.ReservationListActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Button loginButton;
     private Button loginRegistrationButton;
     private Button reservationButtonLink;
+    private Button fastLoginButton;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginRegistrationButton = findViewById(R.id.loginRegistrationButton);
         loginRegistrationButton.setOnClickListener(this);
 
+        fastLoginButton = findViewById(R.id.fast_login_button);
+        fastLoginButton.setOnClickListener(this);
+
         LibraryService.setServerAddress(getString(R.string.serverAddress));
     }
     
@@ -44,22 +47,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             onLoginRegistrationButtonClick();
         } else if (view == reservationButtonLink) {
             onReservationButtonLinkClick();
-        }
-        else {
+        } else if (view == fastLoginButton) {
+            onFastLoginButtonClick();
+        } else {
             throw new AssertionError("event handler not implemented");
         }
     }
 
+    private void onFastLoginButtonClick() {
+        LibraryService.login("joel.egger@hsr.ch", "test", new Callback<Boolean>() {
+            @Override
+            public void onCompletion(Boolean input) {
+                showToast("Login successful");
+            }
+
+            @Override
+            public void onError(String message) {
+                showToast(message);
+            }
+        });
+    }
+
     private void onReservationButtonLinkClick() {
-        startActivity(new Intent(this, ReservationListActivity.class));
+        startActivity(new Intent(this, ReservationActivity.class));
     }
 
     private void onLoginRegistrationButtonClick() {
         startActivity(new Intent(this, RegisterActivity.class));
     }
 
-    private void showToast() {
-        Toast.makeText(this, R.string.loginAccessError, Toast.LENGTH_LONG)
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG)
                 .show();
     }
 
@@ -78,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     startActivity(new Intent(LoginActivity.this, ReservationActivity.class));
                 }
                 else {
-                    showToast();
+                    showToast("Login failed");
                 }
             }
 

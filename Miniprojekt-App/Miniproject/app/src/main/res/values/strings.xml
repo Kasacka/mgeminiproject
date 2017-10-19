@@ -32,10 +32,5 @@
     <!-- Begin other -->
     <string name="reservation_input">Reservationsartikel wählen</string>
     <string name="reservation_button">Reservieren</string>
-
-    <string-array name="reservation_array">
-        <item>Hans</item>
-        <item>Heidi</item>
-        <item>Klara</item>
-    </string-array>
+    <string name="reservation_list_button">Reservationen anzeigen</string>
 </resources>

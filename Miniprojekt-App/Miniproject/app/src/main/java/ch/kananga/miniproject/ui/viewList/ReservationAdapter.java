@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Locale;
 
 import ch.kananga.miniproject.R;
-import ch.kananga.miniproject.domain.Loan;
 import ch.kananga.miniproject.domain.Reservation;
 
 public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHolder>{
@@ -26,10 +25,10 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
     @Override
     public ReservationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.loan_rowlayout, parent, false);
-        TextView gadgetName = view.findViewById(R.id.gadgetName);
-        TextView returnDate = view.findViewById(R.id.returnDate);
-        return new ReservationViewHolder(view, gadgetName, returnDate);
+        View view = layoutInflater.inflate(R.layout.reservation_rowlayout, parent, false);
+        TextView gadgetName = view.findViewById(R.id.reservation_gadget_name);
+        TextView reservationDate = view.findViewById(R.id.reservation_date);
+        return new ReservationViewHolder(view, gadgetName, reservationDate);
     }
 
     @Override
