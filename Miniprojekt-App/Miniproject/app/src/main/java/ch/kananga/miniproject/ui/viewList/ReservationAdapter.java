@@ -7,17 +7,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
-
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.domain.Reservation;
+import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 
 public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHolder>{
-
     private List<Reservation> reservations;
     private SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yy", Locale.GERMAN);
 
@@ -26,24 +24,36 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
     }
 
     @Override
-    public ReservationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ReservationViewHolder onCreateViewHolder(ViewGroup parent, final int reservationIndex) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.reservation_rowlayout, parent, false);
-        TextView gadgetName = view.findViewById(R.id.reservation_gadget_name);
-        TextView reservationDate = view.findViewById(R.id.reservation_date);
-        Button deleteReservationButton = view.findViewById(R.id.delete_reservation);
+        final View rowView = layoutInflater.inflate(R.layout.reservation_rowlayout, parent, false);
+        TextView gadgetName = rowView.findViewById(R.id.reservation_gadget_name);
+        TextView reservationDate = rowView.findViewById(R.id.reservation_date);
+        Button deleteReservationButton = rowView.findViewById(R.id.delete_reservation);
 
-        final int reservationId = viewType;
+        final Reservation reservation = reservations.get(reservationIndex);
 
         deleteReservationButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Löschen " + reservationId, Toast.LENGTH_LONG).show();
-                //LibraryService.deleteReservation();
+            public void onClick(View buttonView) {
+                Toast.makeText(buttonView.getContext(), "Löschen " + reservation.getReservationId(), Toast.LENGTH_LONG).show();
+
+                LibraryService.deleteReservation(reservation, new Callback<Boolean>() {
+                    @Override
+                    public void onCompletion(Boolean input) {
+                        reservations.remove(reservationIndex);
+                        notifyItemRemoved(reservationIndex);
+                    }
+
+                    @Override
+                    public void onError(String message) {
+
+                    }
+                });
             }
         });
 
-        return new ReservationViewHolder(view, gadgetName, reservationDate);
+        return new ReservationViewHolder(rowView, gadgetName, reservationDate);
     }
 
     @Override
