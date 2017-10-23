@@ -39,7 +39,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         loginRegistrationButton = (Button) findViewById(R.id.loginRegistrationButton);
         loginRegistrationButton.setOnClickListener(this);
 
-        fastLoginButton = findViewById(R.id.fast_login_button);
+        fastLoginButton = (Button) findViewById(R.id.fast_login_button);
         fastLoginButton.setOnClickListener(this);
 
         settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
