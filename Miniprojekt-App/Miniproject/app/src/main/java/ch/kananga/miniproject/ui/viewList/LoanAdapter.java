@@ -1,5 +1,6 @@
 package ch.kananga.miniproject.ui.viewList;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -36,6 +38,11 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanViewHolder>{
         final Loan loan = dataset.get(position);
         holder.gadgetName.setText(loan.getGadget().getName());
         holder.returnDate.setText(formatter.format(loan.getReturnDate()));
+        if (loan.getReturnDate().before(new Date())) {
+            holder.parent.setBackgroundColor(Color.parseColor("#f9c5c5"));
+        } else {
+            holder.parent.setBackgroundColor(Color.parseColor("#ffffff"));
+        }
     }
 
     @Override
