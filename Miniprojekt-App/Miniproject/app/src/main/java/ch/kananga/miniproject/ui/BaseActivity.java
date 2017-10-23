@@ -33,6 +33,9 @@ public class BaseActivity extends AppCompatActivity {
     private void startReservationListActivity() {
         startActivity(new Intent(this, ReservationListActivity.class));
     }
+    public void startReservationActivity() {
+        startActivity(new Intent(this, ReservationActivity.class));
+    }
     private void startLoginActivity() {
         startActivity(new Intent(this, LoginActivity.class));
     }

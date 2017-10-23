@@ -19,6 +19,24 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:visibility="gone"
+        android:textSize="24dp"
         android:text="You have no reservations" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="right|bottom"
+        android:orientation="vertical" >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addReservation"
+            android:src="@drawable/floating_button_plus"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"/>
+    </LinearLayout>
 
 </LinearLayout>

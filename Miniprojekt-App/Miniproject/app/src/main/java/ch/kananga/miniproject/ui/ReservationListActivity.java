@@ -2,6 +2,7 @@ package ch.kananga.miniproject.ui;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -16,8 +17,10 @@ import ch.kananga.miniproject.service.Callback;
 import ch.kananga.miniproject.service.LibraryService;
 import ch.kananga.miniproject.ui.viewList.ReservationAdapter;
 
-public class ReservationListActivity extends BaseActivity {
+public class ReservationListActivity extends BaseActivity implements View.OnClickListener {
+
     private RecyclerView reservationListView;
+    private FloatingActionButton addReservationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,13 @@ public class ReservationListActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        addReservationButton = (FloatingActionButton) findViewById(R.id.addReservation);
+        addReservationButton.setOnClickListener(this);
+
         SharedPreferences settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
         LibraryService.setServerAddress(settings.getString(getString(R.string.serverAddress), ""));
 
-        reservationListView = findViewById(R.id.reservation_list_view);
+        reservationListView = (RecyclerView) findViewById(R.id.reservation_list_view);
         reservationListView.setLayoutManager(new LinearLayoutManager(this));
         loadReservationList();
     }
@@ -58,5 +64,12 @@ public class ReservationListActivity extends BaseActivity {
                 showToast(message);
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == addReservationButton) {
+            startReservationActivity();
+        }
     }
 }
