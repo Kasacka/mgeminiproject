@@ -6,6 +6,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,30 +43,29 @@ public class LoanActivity extends BaseActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                loadLoans(lentGadgets, swipeRefreshLayout, emptyText);
+                loadLoans(lentGadgets, emptyText);
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
 
-        loadLoans(lentGadgets, swipeRefreshLayout, emptyText);
+        loadLoans(lentGadgets, emptyText);
     }
 
-    private void loadLoans(final RecyclerView list, final SwipeRefreshLayout refreshLayout, final TextView emptyText) {
+    private void loadLoans(final RecyclerView list, final TextView emptyText) {
         Callback<List<Loan>> result = new Callback<List<Loan>>()
         {
             @Override
-            public void onCompletion(List<Loan> customerLoans)
+            public void onCompletion(List<Loan> loans)
             {
-                List<Loan> loans = customerLoans;
                 LoanAdapter loanAdapter = new LoanAdapter(loans);
                 list.setAdapter(loanAdapter);
 
                 if (loans.isEmpty()) {
-                    refreshLayout.setVisibility(View.GONE);
+                    list.setVisibility(View.GONE);
                     emptyText.setVisibility(View.VISIBLE);
                 }
                 else {
-                    refreshLayout.setVisibility(View.VISIBLE);
+                    list.setVisibility(View.VISIBLE);
                     emptyText.setVisibility(View.GONE);
                 }
             }
@@ -73,7 +73,10 @@ public class LoanActivity extends BaseActivity {
             @Override
             public void onError(String message)
             {
+                Log.e("loans", message);
                 showToast("Something went wrong while get all customer loans");
+                list.setVisibility(View.GONE);
+                emptyText.setVisibility(View.VISIBLE);
             }
         };
         LibraryService.getLoansForCustomer(result);

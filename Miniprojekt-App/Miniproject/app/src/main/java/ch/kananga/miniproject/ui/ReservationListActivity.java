@@ -22,7 +22,6 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
 
     private RecyclerView reservationListView;
     private FloatingActionButton addReservationButton;
-    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
         reservationListView = (RecyclerView) findViewById(R.id.reservation_list_view);
         reservationListView.setLayoutManager(new LinearLayoutManager(this));
 
-        swipeRefreshLayout = findViewById(R.id.swipeRefreshReservations);
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.swipeRefreshReservations);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -54,26 +53,28 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
     }
 
     private void loadReservationList() {
+        final TextView emptyText = (TextView) findViewById(R.id.empty_reservations);
         LibraryService.getReservationsForCustomer(new Callback<List<Reservation>>() {
             @Override
             public void onCompletion(final List<Reservation> reservations) {
                 final ReservationAdapter adapter = new ReservationAdapter(reservations);
                 reservationListView.setAdapter(adapter);
 
-                TextView emptyText = (TextView) findViewById(R.id.empty_reservations);
                 if (reservations.isEmpty()) {
-                    swipeRefreshLayout.setVisibility(View.GONE);
+                    reservationListView.setVisibility(View.GONE);
                     emptyText.setVisibility(View.VISIBLE);
                 }
                 else {
-                    swipeRefreshLayout.setVisibility(View.VISIBLE);
+                    reservationListView.setVisibility(View.VISIBLE);
                     emptyText.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onError(String message) {
-                showToast(message);
+                showToast("Something went wrong while get all customer reservations");
+                reservationListView.setVisibility(View.GONE);
+                emptyText.setVisibility(View.VISIBLE);
             }
         });
     }

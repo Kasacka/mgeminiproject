@@ -20,7 +20,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private EditText usernameText;
     private EditText passwordText;
     private Button loginRegistrationButton;
-    private Button fastLoginButton;
     private SharedPreferences settings;
 
     @Override
@@ -39,14 +38,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         loginRegistrationButton = (Button) findViewById(R.id.loginRegistrationButton);
         loginRegistrationButton.setOnClickListener(this);
 
-        fastLoginButton = (Button) findViewById(R.id.fast_login_button);
-        fastLoginButton.setOnClickListener(this);
-
         settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
         if (settings.getString(getString(R.string.serverAddress), null) == null) {
             SharedPreferences.Editor editor = settings.edit();
             editor.putString(getString(R.string.serverAddress), "https://warm-ocean-14675.herokuapp.com/public");
-            editor.commit();
+            editor.apply();
         }
         if (settings.getBoolean("keepLoggedIn", false)) {
             keepLoggedIn.setChecked(true);
@@ -65,25 +61,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             onLoginRegistrationButtonClick();
         }else if (view == keepLoggedIn) {
             onLoginKeepLoggedInButtonClick();
-        } else if (view == fastLoginButton) {
-            onFastLoginButtonClick();
         } else {
             throw new AssertionError("event handler not implemented");
         }
-    }
-
-    private void onFastLoginButtonClick() {
-        LibraryService.login("joel.egger@hsr.ch", "test", new Callback<Boolean>() {
-            @Override
-            public void onCompletion(Boolean input) {
-                showToast("Login successful");
-            }
-
-            @Override
-            public void onError(String message) {
-                showToast(message);
-            }
-        });
     }
 
     private void onLoginRegistrationButtonClick() {
@@ -105,7 +85,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         editor.putBoolean("keepLoggedIn", true);
                         editor.putString("username", username);
                         editor.putString("password", password);
-                        editor.commit();
+                        editor.apply();
                     }
                     startLoanActivity();
                 }
@@ -145,7 +125,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             editor.remove("username");
             editor.remove("password");
         }
-        editor.commit();
+        editor.apply();
     }
 
 }

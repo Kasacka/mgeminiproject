@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
         android:text="Server adress"
         android:layout_alignLeft="@+id/libraryServerText"
         android:layout_alignStart="@+id/libraryServerText" />
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:layout_marginLeft="8dp"
         android:text="http://"
         android:hint="library server adress"
         android:layout_below="@+id/libraryServerLabel" />
@@ -31,6 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Change library"
+        android:layout_marginLeft="8dp"
+        android:background="@color/colorAccent"
         android:layout_marginTop="8dp"
         android:layout_below="@+id/libraryServerText"/>
 

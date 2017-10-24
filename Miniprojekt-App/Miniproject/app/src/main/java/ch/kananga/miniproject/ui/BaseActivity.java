@@ -14,12 +14,6 @@ import static ch.kananga.miniproject.R.id.loans;
 
 public class BaseActivity extends AppCompatActivity {
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        logout();
-    }
-
     public void showToast(String text) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
