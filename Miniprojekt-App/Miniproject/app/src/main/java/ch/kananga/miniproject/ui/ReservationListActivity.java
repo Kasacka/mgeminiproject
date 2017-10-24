@@ -3,6 +3,7 @@ package ch.kananga.miniproject.ui;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +22,7 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
 
     private RecyclerView reservationListView;
     private FloatingActionButton addReservationButton;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,23 +40,33 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
 
         reservationListView = (RecyclerView) findViewById(R.id.reservation_list_view);
         reservationListView.setLayoutManager(new LinearLayoutManager(this));
+
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshReservations);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadReservationList();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
         loadReservationList();
     }
 
     private void loadReservationList() {
         LibraryService.getReservationsForCustomer(new Callback<List<Reservation>>() {
             @Override
-            public void onCompletion(List<Reservation> reservations) {
-                ReservationAdapter adapter = new ReservationAdapter(reservations);
+            public void onCompletion(final List<Reservation> reservations) {
+                final ReservationAdapter adapter = new ReservationAdapter(reservations);
                 reservationListView.setAdapter(adapter);
 
                 TextView emptyText = (TextView) findViewById(R.id.empty_reservations);
                 if (reservations.isEmpty()) {
-                    reservationListView.setVisibility(View.GONE);
+                    swipeRefreshLayout.setVisibility(View.GONE);
                     emptyText.setVisibility(View.VISIBLE);
                 }
                 else {
-                    reservationListView.setVisibility(View.VISIBLE);
+                    swipeRefreshLayout.setVisibility(View.VISIBLE);
                     emptyText.setVisibility(View.GONE);
                 }
             }
