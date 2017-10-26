@@ -20,7 +20,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private EditText usernameText;
     private EditText passwordText;
     private Button loginRegistrationButton;
-    private Button fastLoginButton;
     private SharedPreferences settings;
 
     @Override
@@ -38,9 +37,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         loginRegistrationButton = (Button) findViewById(R.id.loginRegistrationButton);
         loginRegistrationButton.setOnClickListener(this);
-
-        fastLoginButton = (Button) findViewById(R.id.fast_login_button);
-        fastLoginButton.setOnClickListener(this);
 
         settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
         if (settings.getString(getString(R.string.serverAddress), null) == null) {
@@ -65,25 +61,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             onLoginRegistrationButtonClick();
         }else if (view == keepLoggedIn) {
             onLoginKeepLoggedInButtonClick();
-        } else if (view == fastLoginButton) {
-            onFastLoginButtonClick();
         } else {
             throw new AssertionError("event handler not implemented");
         }
-    }
-
-    private void onFastLoginButtonClick() {
-        LibraryService.login("joel.egger@hsr.ch", "test", new Callback<Boolean>() {
-            @Override
-            public void onCompletion(Boolean input) {
-                showToast("Login successful");
-            }
-
-            @Override
-            public void onError(String message) {
-                showToast(message);
-            }
-        });
     }
 
     private void onLoginRegistrationButtonClick() {

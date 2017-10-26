@@ -105,14 +105,5 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
 
-        <Button
-            android:id="@+id/fast_login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/loginEmailLabel"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
-            android:text="Schnelllogin" />
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
