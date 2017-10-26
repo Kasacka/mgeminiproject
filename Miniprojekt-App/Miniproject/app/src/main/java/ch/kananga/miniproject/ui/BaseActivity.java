@@ -69,14 +69,14 @@ public class BaseActivity extends AppCompatActivity {
                     startLoginActivity();
                 }
                 else {
-                    showToast("Something went totally wrong!");
+                    showToast("Beim ausloggen ging etwas schief. Bitte starten Sie die App neu.");
                 }
             }
 
             @Override
             public void onError(String message)
             {
-                showToast("You could not logout from app. Please try again");
+                showToast("Sie konnten leider nicht ausgeloggt werden. Versuchen Sie bitte nochmals.");
             }
         };
         LibraryService.logout(result);

@@ -31,7 +31,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         if (view == registerButton) {
             onRegisterButtonClick();
         } else {
-            throw new AssertionError("view not found");
+            throw new AssertionError("Dieser Event-Handler ist nicht implementiert!");
         }
     }
 
@@ -63,7 +63,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             @Override
             public void onError(String message) {
                 showToast(message);
-                Log.d("ERROR", "onError message=" + message);
+                Log.e("ERROR", "onError message=" + message);
             }
         };
 
