@@ -31,7 +31,9 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(new Intent(this, ReservationActivity.class));
     }
     private void startLoginActivity() {
-        startActivity(new Intent(this, LoginActivity.class));
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
     private void startChangeLibraryActivity() {
         startActivity(new Intent(this, ChangeLibraryActivity.class));
