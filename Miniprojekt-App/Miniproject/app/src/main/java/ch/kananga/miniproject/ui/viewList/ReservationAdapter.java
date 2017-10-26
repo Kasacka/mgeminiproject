@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -55,7 +54,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
 
                     @Override
                     public void onError(String message) {
-
+                        Log.e("ReservationAdapter", "Die Reservierung konnte nicht entfernt werden.");
                     }
                 });
             }
