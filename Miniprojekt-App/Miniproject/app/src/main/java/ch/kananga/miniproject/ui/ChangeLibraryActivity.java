@@ -32,6 +32,6 @@ public class ChangeLibraryActivity extends BaseActivity implements View.OnClickL
         editor.putString(getString(R.string.serverAddress), newLibrary.getText().toString());
         editor.apply();
 
-        startLoanActivity();
+        logout();
     }
 }

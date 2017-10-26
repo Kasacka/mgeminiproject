@@ -57,7 +57,7 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void logout() {
+    public void logout() {
         Callback<Boolean> result = new Callback<Boolean>()
         {
             @Override
