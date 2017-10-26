@@ -19,6 +19,11 @@ public class ChangeLibraryActivity extends BaseActivity implements View.OnClickL
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        SharedPreferences settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
+        EditText actualLibrary = (EditText) findViewById(R.id.libraryServerText);
+        actualLibrary.setText(settings.getString(getString(R.string.serverAddress), "http://"));
+
+
         Button changeLibrary = findViewById(R.id.libraryChangeButton);
         changeLibrary.setOnClickListener(this);
     }
