@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -38,14 +39,20 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanViewHolder>{
         final Loan loan = dataset.get(position);
         holder.gadgetName.setText(loan.getGadget().getName());
 
-        if (loan.getReturnDate() != null) {
-            holder.returnDate.setText(formatter.format(loan.getReturnDate()));
+        if (loan.getPickupDate() != null) {
 
-            if (loan.getReturnDate().before(new Date())) {
+            Calendar calculatedReturnDate = Calendar.getInstance();
+            calculatedReturnDate.setTime(loan.getPickupDate());
+            calculatedReturnDate.add(Calendar.DATE, 7);
+
+            holder.returnDate.setText(formatter.format(calculatedReturnDate.getTime()));
+
+            if (calculatedReturnDate.getTime().before(new Date())) {
                 holder.parent.setBackgroundColor(Color.parseColor("#f9c5c5"));
             } else {
                 holder.parent.setBackgroundColor(Color.parseColor("#ffffff"));
             }
+
         } else {
             holder.returnDate.setText("");
         }
