@@ -17,6 +17,7 @@ import ch.kananga.miniproject.service.LibraryService;
 public class ReservationActivity extends BaseActivity implements View.OnClickListener {
     private Spinner reservationArticleSpinner;
     private Button reservationButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
