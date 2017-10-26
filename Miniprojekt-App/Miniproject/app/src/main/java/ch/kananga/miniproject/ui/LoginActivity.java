@@ -42,7 +42,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         if (settings.getString(getString(R.string.serverAddress), null) == null) {
             SharedPreferences.Editor editor = settings.edit();
             editor.putString(getString(R.string.serverAddress), "https://warm-ocean-14675.herokuapp.com/public");
-            editor.commit();
+            editor.apply();
         }
         if (settings.getBoolean("keepLoggedIn", false)) {
             keepLoggedIn.setChecked(true);
@@ -85,7 +85,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         editor.putBoolean("keepLoggedIn", true);
                         editor.putString("username", username);
                         editor.putString("password", password);
-                        editor.commit();
+                        editor.apply();
                     }
                     startLoanActivity();
                 }
@@ -125,7 +125,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             editor.remove("username");
             editor.remove("password");
         }
-        editor.commit();
+        editor.apply();
     }
 
 }

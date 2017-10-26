@@ -37,11 +37,17 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanViewHolder>{
     public void onBindViewHolder(LoanViewHolder holder, int position) {
         final Loan loan = dataset.get(position);
         holder.gadgetName.setText(loan.getGadget().getName());
-        holder.returnDate.setText(formatter.format(loan.getReturnDate()));
-        if (loan.getReturnDate().before(new Date())) {
-            holder.parent.setBackgroundColor(Color.parseColor("#f9c5c5"));
+
+        if (loan.getReturnDate() != null) {
+            holder.returnDate.setText(formatter.format(loan.getReturnDate()));
+
+            if (loan.getReturnDate().before(new Date())) {
+                holder.parent.setBackgroundColor(Color.parseColor("#f9c5c5"));
+            } else {
+                holder.parent.setBackgroundColor(Color.parseColor("#ffffff"));
+            }
         } else {
-            holder.parent.setBackgroundColor(Color.parseColor("#ffffff"));
+            holder.returnDate.setText("");
         }
     }
 

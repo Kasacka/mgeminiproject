@@ -8,19 +8,26 @@
 
     <include layout="@layout/app_bar_layout" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/lendingList"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLoans"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/empty_loans"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:visibility="gone"
-        android:textSize="24dp"
-        android:text="You have no loans" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lendingList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <TextView
+            android:id="@+id/empty_loans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textSize="24dp"
+            android:text="You have no loans" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

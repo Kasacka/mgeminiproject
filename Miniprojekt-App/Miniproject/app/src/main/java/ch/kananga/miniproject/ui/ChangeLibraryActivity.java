@@ -30,8 +30,8 @@ public class ChangeLibraryActivity extends BaseActivity implements View.OnClickL
         SharedPreferences settings = getSharedPreferences(getString(R.string.settings), MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString(getString(R.string.serverAddress), newLibrary.getText().toString());
-        editor.commit();
+        editor.apply();
 
-        startLoanActivity();
+        logout();
     }
 }

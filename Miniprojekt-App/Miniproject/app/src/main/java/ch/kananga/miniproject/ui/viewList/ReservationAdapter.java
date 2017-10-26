@@ -6,10 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
+
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.domain.Reservation;
 import ch.kananga.miniproject.service.Callback;
@@ -36,8 +37,6 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
         deleteReservationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View buttonView) {
-                Toast.makeText(buttonView.getContext(), "Löschen " + reservation.getReservationId(), Toast.LENGTH_LONG).show();
-
                 LibraryService.deleteReservation(reservation, new Callback<Boolean>() {
                     @Override
                     public void onCompletion(Boolean input) {
