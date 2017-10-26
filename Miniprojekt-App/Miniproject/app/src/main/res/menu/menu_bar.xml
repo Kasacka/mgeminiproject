@@ -4,22 +4,22 @@
 
     <item
         android:id="@+id/loans"
-        android:title="Loans"
+        android:title="Ausleihen"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/reservations"
-        android:title="Reservations"
+        android:title="Reservationen"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/libraries"
-        android:title="Change library"
+        android:title="Bibliothek wechseln"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/logout"
-        android:title="Log out"
+        android:title="Ausloggen"
         app:showAsAction="never" />
 
 </menu>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,26 +10,28 @@
 
     <TextView
         android:id="@+id/reservation_label"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/reservation_input" />
 
     <Spinner
         android:id="@+id/reservation_article"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/reservation_button"
-        android:layout_width="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:background="@color/colorAccent"
-        android:text="@string/reservation_button" />
+        android:text="@string/reservation_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:id="@+id/reservation_list_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="@string/reservation_list_button" />
 </LinearLayout>

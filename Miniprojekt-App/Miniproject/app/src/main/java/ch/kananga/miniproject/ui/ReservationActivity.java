@@ -19,8 +19,6 @@ import ch.kananga.miniproject.service.LibraryService;
 public class ReservationActivity extends BaseActivity implements View.OnClickListener {
     private Spinner reservationArticleSpinner;
     private Button reservationButton;
-    private Button reservationListButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,24 +35,15 @@ public class ReservationActivity extends BaseActivity implements View.OnClickLis
         loadArticles();
         reservationButton = (Button) findViewById(R.id.reservation_button);
         reservationButton.setOnClickListener(this);
-
-        reservationListButton = (Button) findViewById(R.id.reservation_list_button);
-        reservationListButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view == reservationButton) {
             onReservationButtonClick();
-        } else if (view == reservationListButton) {
-            onReservationListButtonClick();
         } else {
             throw new AssertionError("view not found");
         }
-    }
-
-    private void onReservationListButtonClick() {
-        startActivity(new Intent(this, ReservationListActivity.class));
     }
 
     private void onReservationButtonClick() {
@@ -94,5 +83,4 @@ public class ReservationActivity extends BaseActivity implements View.OnClickLis
                 gadgets);
         reservationArticleSpinner.setAdapter(spinnerArrayAdapter);
     }
-
 }

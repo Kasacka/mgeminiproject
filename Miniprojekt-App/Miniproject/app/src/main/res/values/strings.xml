@@ -8,27 +8,27 @@
     <string name="serverAddress">serverAddress</string>
 
     <!-- Begin string definition login screen -->
-    <string name="loginAppIconImageContentDescription">gadgetothek</string>
-    <string name="loginEmailLabelText">email</string>
-    <string name="loginEmailHintText">email address</string>
-    <string name="loginPasswordLabelText">password</string>
-    <string name="loginPasswordHintText">password</string>
-    <string name="loginKeepSwitchText">keep me logged in</string>
-    <string name="loginLoginButtonText">login</string>
-    <string name="loginRegistrationViewText">New to Gadgetothek? Register now!</string>
+    <string name="loginAppIconImageContentDescription">Gadgetothek</string>
+    <string name="loginEmailLabelText">Email</string>
+    <string name="loginEmailHintText">Email-Adresse</string>
+    <string name="loginPasswordLabelText">Passwort</string>
+    <string name="loginPasswordHintText">Passwort</string>
+    <string name="loginKeepSwitchText">eingeloggt bleiben</string>
+    <string name="loginLoginButtonText">Login</string>
+    <string name="loginRegistrationViewText">Neu bei der Gadgetothek?</string>
     <string name="loginRegistrationButtonText">registration</string>
 
     <!-- Begin string definition registration screen -->
-    <string name="registrationAppIconImageContentDescription">gadgetothek registration</string>
-    <string name="registrationEmailLabelText">email</string>
-    <string name="registrationEmailHintText">email address</string>
-    <string name="registrationNameLabelText">name</string>
-    <string name="registrationNameHintText">your name</string>
-    <string name="registrationMatrikelLabelText">matrikel no.</string>
-    <string name="registrationMatrikelHintText">matrikel number</string>
-    <string name="registrationPasswordLabelText">password</string>
-    <string name="registrationPasswordHintText">password</string>
-    <string name="registrationRegisterButtonText">register</string>
+    <string name="registrationAppIconImageContentDescription">Gadgetothek Registration</string>
+    <string name="registrationEmailLabelText">Email</string>
+    <string name="registrationEmailHintText">Email-Adresse</string>
+    <string name="registrationNameLabelText">Name</string>
+    <string name="registrationNameHintText">Dein Name</string>
+    <string name="registrationMatrikelLabelText">Matrikel Nr.</string>
+    <string name="registrationMatrikelHintText">Matrikel Nr.</string>
+    <string name="registrationPasswordLabelText">Passwort</string>
+    <string name="registrationPasswordHintText">Passwort</string>
+    <string name="registrationRegisterButtonText">Registrieren</string>
 
     <!-- Begin other -->
     <string name="reservation_input">Reservationsartikel wählen</string>
@@ -39,10 +39,4 @@
     <string name="matrikel_label">Matrikel-Nr.</string>
     <string name="password_label">Passwort</string>
     <string name="register_button">Registrieren</string>
-
-    <string-array name="reservation_array">
-        <item>Hans</item>
-        <item>Heidi</item>
-        <item>Klara</item>
-    </string-array>
 </resources>
