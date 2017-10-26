@@ -52,6 +52,12 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
         loadReservationList();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadReservationList();
+    }
+
     private void loadReservationList() {
         final TextView emptyText = (TextView) findViewById(R.id.empty_reservations);
         LibraryService.getReservationsForCustomer(new Callback<List<Reservation>>() {

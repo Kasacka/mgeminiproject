@@ -1,6 +1,5 @@
 package ch.kananga.miniproject.ui;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,9 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import java.util.List;
-
 import ch.kananga.miniproject.R;
 import ch.kananga.miniproject.domain.Gadget;
 import ch.kananga.miniproject.service.Callback;

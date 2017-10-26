@@ -1,11 +1,13 @@
 package ch.kananga.miniproject.ui.viewList;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -30,9 +32,16 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
         final View rowView = layoutInflater.inflate(R.layout.reservation_rowlayout, parent, false);
         TextView gadgetName = rowView.findViewById(R.id.reservation_gadget_name);
         TextView reservationDate = rowView.findViewById(R.id.reservation_date);
-        Button deleteReservationButton = rowView.findViewById(R.id.delete_reservation);
+        return new ReservationViewHolder(rowView, gadgetName, reservationDate);
+    }
 
-        final Reservation reservation = reservations.get(reservationIndex);
+    @Override
+    public void onBindViewHolder(ReservationViewHolder holder, final int position) {
+        final Reservation reservation = reservations.get(position);
+        holder.gadgetName.setText(reservation.getGadget().getName());
+        holder.reservationDate.setText(formatter.format(reservation.getReservationDate()));
+
+        Button deleteReservationButton = holder.parent.findViewById(R.id.delete_reservation);
 
         deleteReservationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +49,9 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
                 LibraryService.deleteReservation(reservation, new Callback<Boolean>() {
                     @Override
                     public void onCompletion(Boolean input) {
-                        reservations.remove(reservationIndex);
-                        notifyItemRemoved(reservationIndex);
+                        Log.d("", "ReservationIndex=" + position +"");
+                        reservations.remove(position);
+                        notifyItemRemoved(position);
                     }
 
                     @Override
@@ -51,15 +61,6 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
                 });
             }
         });
-
-        return new ReservationViewHolder(rowView, gadgetName, reservationDate);
-    }
-
-    @Override
-    public void onBindViewHolder(ReservationViewHolder holder, int position) {
-        final Reservation reservation = reservations.get(position);
-        holder.gadgetName.setText(reservation.getGadget().getName());
-        holder.reservationDate.setText(formatter.format(reservation.getReservationDate()));
     }
 
     @Override
