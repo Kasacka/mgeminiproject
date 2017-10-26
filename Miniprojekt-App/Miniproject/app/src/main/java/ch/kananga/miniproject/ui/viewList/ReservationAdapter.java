@@ -49,7 +49,6 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationViewHold
                 LibraryService.deleteReservation(reservation, new Callback<Boolean>() {
                     @Override
                     public void onCompletion(Boolean input) {
-                        Log.d("", "ReservationIndex=" + position +"");
                         reservations.remove(position);
                         notifyItemRemoved(position);
                     }
