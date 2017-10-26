@@ -73,8 +73,8 @@ public class LoanActivity extends BaseActivity {
             @Override
             public void onError(String message)
             {
-                Log.e("loans", message);
-                showToast("Something went wrong while get all customer loans");
+                Log.e("ERROR", "onError message=" + message);
+                showToast("Die ausgeliehenen Gadgets konnten nicht geladen werden.");
                 list.setVisibility(View.GONE);
                 emptyText.setVisibility(View.VISIBLE);
             }

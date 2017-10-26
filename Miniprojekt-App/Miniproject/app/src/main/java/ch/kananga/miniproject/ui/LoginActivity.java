@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,7 +63,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }else if (view == keepLoggedIn) {
             onLoginKeepLoggedInButtonClick();
         } else {
-            throw new AssertionError("event handler not implemented");
+            throw new AssertionError("Dieser Event-Handler ist nicht implementiert");
         }
     }
 
@@ -101,8 +102,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 badimage.setImageResource(R.drawable.gadget_app_bad);
 
                 if (message.equals("user does not exist")) {
-                    Snackbar snackbar = Snackbar.make(findViewById(R.id.loginCoordinatorLayout), message, Snackbar.LENGTH_INDEFINITE);
-                    snackbar.setAction("Go to register", new View.OnClickListener() {
+                    Snackbar snackbar = Snackbar.make(findViewById(R.id.loginCoordinatorLayout), "Der User ist noch nicht vorhanden.", Snackbar.LENGTH_INDEFINITE);
+                    snackbar.setAction("Wollen Sie zur Registrierung?", new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             startRegisterActivity();
@@ -111,6 +112,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     snackbar.show();
                 } else {
                     showToast(message);
+                    Log.e("ERROR", "onError message=" + message);
                 }
             }
         };

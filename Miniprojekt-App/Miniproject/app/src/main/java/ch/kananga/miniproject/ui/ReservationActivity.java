@@ -1,9 +1,9 @@
 package ch.kananga.miniproject.ui;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,7 +42,7 @@ public class ReservationActivity extends BaseActivity implements View.OnClickLis
         if (view == reservationButton) {
             onReservationButtonClick();
         } else {
-            throw new AssertionError("view not found");
+            throw new AssertionError("Dieser Event-Handler ist nicht implementiert!");
         }
     }
 
@@ -52,7 +52,7 @@ public class ReservationActivity extends BaseActivity implements View.OnClickLis
         LibraryService.reserveGadget(gadget, new Callback<Boolean>() {
             @Override
             public void onCompletion(Boolean input) {
-                showToast("Article reserved");
+                showToast("Artikel wurde reserviert");
             }
 
             @Override
@@ -71,6 +71,7 @@ public class ReservationActivity extends BaseActivity implements View.OnClickLis
 
             @Override
             public void onError(String message) {
+                Log.e("ERROR", "onError message=" + message);
                 showToast(message);
             }
         });

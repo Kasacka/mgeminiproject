@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -72,7 +73,8 @@ public class ReservationListActivity extends BaseActivity implements View.OnClic
 
             @Override
             public void onError(String message) {
-                showToast("Something went wrong while get all customer reservations");
+                showToast("Ihre Reservationen konnten nicht geladen werden.");
+                Log.e("ERROR", "onError message=" + message);
                 reservationListView.setVisibility(View.GONE);
                 emptyText.setVisibility(View.VISIBLE);
             }
