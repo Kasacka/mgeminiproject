@@ -21,3 +21,9 @@ C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\Miniprojekt-WPF.csproj.CoreCompileInputs.cache
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\Miniprojekt-WPF.exe
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\Miniprojekt-WPF.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\ch.hsr.wpf.gadgeothek.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\Newtonsoft.Json.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\RestSharp.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\ch.hsr.wpf.gadgeothek.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\Newtonsoft.Json.xml
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\Miniprojekt-WPF.csprojResolveAssemblyReference.cache

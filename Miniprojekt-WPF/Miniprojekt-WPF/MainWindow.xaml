@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Gadgetothek" Height="350" Width="525">
     <Grid>
-        <TabControl Margin="10,10,10,10" HorizontalAlignment="Stretch" Width="500" Height="300" VerticalAlignment="Stretch">
+        <TabControl Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TabItem Header="Gadgets">
                 <Grid Background="#FFE5E5E5">
                     <local:GadgetListView />

@@ -7,6 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Button Content="Test" />
+        <ListView ItemsSource="{Binding GadgetList}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="{Binding Abc}" Margin="67,258,69,18" Width="164" Command="{Binding GadgetDeleteCommand}"  />
     </Grid>
 </UserControl>

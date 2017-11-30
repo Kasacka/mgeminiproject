@@ -79,6 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DelegateCommand.cs" />
     <Compile Include="GadgetAddView.xaml.cs">
       <DependentUpon>GadgetAddView.xaml</DependentUpon>
     </Compile>
@@ -88,6 +89,7 @@
     <Compile Include="GadgetListView.xaml.cs">
       <DependentUpon>GadgetListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GadgetListViewModel.cs" />
     <Compile Include="LoanListView.xaml.cs">
       <DependentUpon>LoanListView.xaml</DependentUpon>
     </Compile>
@@ -121,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ch.hsr.wpf.gadgeothek\ch.hsr.wpf.gadgeothek.csproj">
+      <Project>{ac1eeaa5-ea41-46fc-8afe-f0cf4b936abb}</Project>
+      <Name>ch.hsr.wpf.gadgeothek</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
