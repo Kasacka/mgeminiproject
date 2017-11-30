@@ -1,0 +1,11 @@
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.websockets-listener.csproj.CoreCompileInputs.cache
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.runner.exe.config
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.runner.exe
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\Newtonsoft.Json.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\RestSharp.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\Newtonsoft.Json.xml
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.runner.exe
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
