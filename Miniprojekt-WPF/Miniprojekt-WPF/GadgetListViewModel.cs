@@ -11,29 +11,23 @@ namespace Miniprojekt_WPF
     public class GadgetListViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<Gadget> gadgetList;
+        private Gadget selectedGadget;
         private LibraryAdminService libraryAdminService;
-        private string abc = "jdfhjkh";
-
+        
         public GadgetListViewModel()
         {
             gadgetList = new ObservableCollection<Gadget>();
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
             libraryAdminService.GetAllGadgets().ForEach(gadgetList.Add);
+
             GadgetDeleteCommand = new DelegateCommand(OnDeleteGadget);
+            GadgetAddCommand = new DelegateCommand(OnAddGadget);
+            GadgetEditCommand = new DelegateCommand(OnEditGadget);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public string Abc {
-            get { return abc; }
-            set
-            {
-                abc = value;
-                OnPropertyChanged();
-            }
-        }
-
+        
         public ObservableCollection<Gadget> GadgetList
         {
             get { return gadgetList; }
@@ -44,14 +38,50 @@ namespace Miniprojekt_WPF
             }
         }
 
+        public Gadget SelectedGadget
+        {
+            get { return selectedGadget; }
+            set
+            {
+                selectedGadget = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand GadgetDeleteCommand
+        {
+            get; private set;
+        }
+
+        public ICommand GadgetAddCommand
+        {
+            get; private set;
+        }
+
+        public ICommand GadgetEditCommand
         {
             get; private set;
         }
 
         private void OnDeleteGadget()
         {
-            Abc = "Test Test";
+            if (SelectedGadget == null)
+                return;
+
+            libraryAdminService.DeleteGadget(SelectedGadget);
+            gadgetList.Remove(SelectedGadget);
+        }
+
+        private void OnAddGadget()
+        {
+            var window = new GadgetAddWindow();
+            window.ShowDialog();
+        }
+
+        private void OnEditGadget()
+        {
+            var window = new GadgetAddWindow();
+            window.ShowDialog();
         }
 
         private void OnPropertyChanged([CallerMemberName] string properyName = null)

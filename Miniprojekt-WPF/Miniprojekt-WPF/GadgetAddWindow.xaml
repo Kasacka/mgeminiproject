@@ -1,0 +1,21 @@
+﻿<Window x:Class="Miniprojekt_WPF.GadgetAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Miniprojekt_WPF"
+        mc:Ignorable="d"
+        Title="GadgetAddWindow" Height="300" Width="300">
+    <StackPanel>
+        <Label Content="Inventory-Nr:" />
+        <TextBox Text="{Binding InventoryNumber}" />
+        <Label Content="Manufacturer:" />
+        <TextBox Text="{Binding Manufacturer}" />
+        <Label Content="Name:" />
+        <TextBox Text="{Binding Name}" />
+        <Label Content="Price:" />
+        <TextBox Text="{Binding Price}" />
+        <Button Content="Save" Command="{Binding SaveCommand}" />
+        <Button Content="Cancel" Click="Button_Click" />
+    </StackPanel>
+</Window>

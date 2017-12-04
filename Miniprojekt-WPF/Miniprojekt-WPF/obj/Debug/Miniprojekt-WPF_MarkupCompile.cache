@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\App.xaml
-5-1430566818
+5-1686998675
 
-11840954754
+12304905889
 15-474283556
-GadgetAddView.xaml;GadgetDeleteView.xaml;GadgetListView.xaml;LoanListView.xaml;MainWindow.xaml;
+GadgetAddWindow.xaml;GadgetDeleteView.xaml;GadgetListView.xaml;LoanListView.xaml;MainWindow.xaml;
 
 False
 

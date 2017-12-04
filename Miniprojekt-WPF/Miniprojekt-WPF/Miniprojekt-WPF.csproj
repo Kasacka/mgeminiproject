@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GadgetAddView.xaml">
+    <Page Include="GadgetAddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -80,8 +80,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DelegateCommand.cs" />
-    <Compile Include="GadgetAddView.xaml.cs">
-      <DependentUpon>GadgetAddView.xaml</DependentUpon>
+    <Compile Include="GadgetAddViewModel.cs" />
+    <Compile Include="GadgetAddWindow.xaml.cs">
+      <DependentUpon>GadgetAddWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GadgetDeleteView.xaml.cs">
       <DependentUpon>GadgetDeleteView.xaml</DependentUpon>
