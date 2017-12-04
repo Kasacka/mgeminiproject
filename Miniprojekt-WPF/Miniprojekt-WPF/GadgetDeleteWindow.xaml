@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Miniprojekt_WPF"
         mc:Ignorable="d"
-        Title="GadgetDeleteWindow" Height="300" Width="300">
+        Title="GadgetDeleteWindow" Height="120" Width="300">
     <StackPanel>
+        <Label Content="Are you sure that you want to delete this gadget?" />
+        <Label />
         <Button Content="Yes" Click="YesClicked" />
         <Button Content="No" Click="NoClicked" />
     </StackPanel>
