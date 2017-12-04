@@ -14,8 +14,7 @@ namespace Miniprojekt_WPF
         private readonly LibraryAdminService libraryAdminService;
         private readonly Gadget gadget;
         
-        public GadgetAddViewModel(INavigationContext navigationContext,
-            Action<Gadget> gadgetAdded)
+        public GadgetAddViewModel(INavigationContext navigationContext)
         {
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
@@ -24,11 +23,8 @@ namespace Miniprojekt_WPF
             CancelCommand = new DelegateCommand(OnCancel);
 
             this.navigationContext = navigationContext;
-            GadgetAdded = gadgetAdded;
         }
-
-        public event Action<Gadget> GadgetAdded;
-
+        
         public string InventoryNumber
         {
             get { return gadget.InventoryNumber; }
@@ -82,7 +78,6 @@ namespace Miniprojekt_WPF
         private void OnSaveGadget()
         {
             libraryAdminService.AddGadget(gadget);
-            GadgetAdded?.Invoke(gadget);
             navigationContext.CloseView();
         }
 
