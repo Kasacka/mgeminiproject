@@ -10,11 +10,12 @@ namespace Miniprojekt_WPF
 {
     public class GadgetListViewModel : INotifyPropertyChanged
     {
+        private readonly INavigationContext navigationContext;
         private ObservableCollection<Gadget> gadgetList;
         private Gadget selectedGadget;
         private LibraryAdminService libraryAdminService;
         
-        public GadgetListViewModel()
+        public GadgetListViewModel(INavigationContext navigationContext)
         {
             gadgetList = new ObservableCollection<Gadget>();
             var serverAddress = ConfigurationManager.AppSettings["server"];
@@ -24,6 +25,8 @@ namespace Miniprojekt_WPF
             GadgetDeleteCommand = new DelegateCommand(OnDeleteGadget);
             GadgetAddCommand = new DelegateCommand(OnAddGadget);
             GadgetEditCommand = new DelegateCommand(OnEditGadget);
+
+            this.navigationContext = navigationContext;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -67,21 +70,24 @@ namespace Miniprojekt_WPF
         {
             if (SelectedGadget == null)
                 return;
+            
+            var window = new GadgetDeleteWindow();
 
-            libraryAdminService.DeleteGadget(SelectedGadget);
-            gadgetList.Remove(SelectedGadget);
+            if (window.ShowDialog().Value)
+            {
+                libraryAdminService.DeleteGadget(SelectedGadget);
+                gadgetList.Remove(SelectedGadget);
+            }
         }
 
         private void OnAddGadget()
         {
-            var window = new GadgetAddWindow();
-            window.ShowDialog();
+            navigationContext.StartView(new GadgetAddView());
         }
 
         private void OnEditGadget()
         {
-            var window = new GadgetAddWindow();
-            window.ShowDialog();
+            navigationContext.StartView(new GadgetAddView());
         }
 
         private void OnPropertyChanged([CallerMemberName] string properyName = null)

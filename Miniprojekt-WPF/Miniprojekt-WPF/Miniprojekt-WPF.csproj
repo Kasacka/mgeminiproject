@@ -55,11 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GadgetAddWindow.xaml">
+    <Page Include="GadgetAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GadgetDeleteView.xaml">
+    <Page Include="GadgetDeleteWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,16 +81,18 @@
     </Compile>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="GadgetAddViewModel.cs" />
-    <Compile Include="GadgetAddWindow.xaml.cs">
-      <DependentUpon>GadgetAddWindow.xaml</DependentUpon>
+    <Compile Include="GadgetAddView.xaml.cs">
+      <DependentUpon>GadgetAddView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GadgetDeleteView.xaml.cs">
-      <DependentUpon>GadgetDeleteView.xaml</DependentUpon>
+    <Compile Include="GadgetDeleteWindow.xaml.cs">
+      <DependentUpon>GadgetDeleteWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GadgetListView.xaml.cs">
       <DependentUpon>GadgetListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="GadgetListViewModel.cs" />
+    <Compile Include="ICloseable.cs" />
+    <Compile Include="INavigationContext.cs" />
     <Compile Include="LoanListView.xaml.cs">
       <DependentUpon>LoanListView.xaml</DependentUpon>
     </Compile>

@@ -1,5 +1,6 @@
 ﻿using ch.hsr.wpf.gadgeothek.domain;
 using ch.hsr.wpf.gadgeothek.service;
+using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Runtime.CompilerServices;
@@ -9,16 +10,24 @@ namespace Miniprojekt_WPF
 {
     public sealed class GadgetAddViewModel : INotifyPropertyChanged
     {
+        private readonly INavigationContext navigationContext;
         private readonly LibraryAdminService libraryAdminService;
         private readonly Gadget gadget;
         
-        public GadgetAddViewModel()
+        public GadgetAddViewModel(INavigationContext navigationContext,
+            Action<Gadget> gadgetAdded)
         {
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
             gadget = new Gadget();
             SaveCommand = new DelegateCommand(OnSaveGadget);
+            CancelCommand = new DelegateCommand(OnCancel);
+
+            this.navigationContext = navigationContext;
+            GadgetAdded = gadgetAdded;
         }
+
+        public event Action<Gadget> GadgetAdded;
 
         public string InventoryNumber
         {
@@ -64,10 +73,22 @@ namespace Miniprojekt_WPF
         {
             get; private set;
         }
+
+        public ICommand CancelCommand
+        {
+            get; private set;
+        }
         
         private void OnSaveGadget()
         {
             libraryAdminService.AddGadget(gadget);
+            GadgetAdded?.Invoke(gadget);
+            navigationContext.CloseView();
+        }
+
+        private void OnCancel()
+        {
+            navigationContext.CloseView();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

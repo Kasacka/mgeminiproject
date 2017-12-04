@@ -3,17 +3,17 @@ using System.Windows.Controls;
 
 namespace Miniprojekt_WPF
 {
-    public partial class GadgetListView : UserControl
+    public partial class GadgetAddView : UserControl
     {
-        public GadgetListView()
+        public GadgetAddView()
         {
             InitializeComponent();
-            DataContext = new GadgetListViewModel(GetNavigationContext());
+            DataContext = new GadgetAddViewModel(GetNavigationContext());
         }
 
         private INavigationContext GetNavigationContext()
         {
-            return (INavigationContext)Application.Current.MainWindow;
+            return (INavigationContext) Application.Current.MainWindow;
         }
     }
 }

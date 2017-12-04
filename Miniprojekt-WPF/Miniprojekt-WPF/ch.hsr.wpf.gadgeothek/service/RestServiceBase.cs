@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RestSharp;
 using System.Diagnostics;
-using System.IO;
-using ch.hsr.wpf.gadgeothek.domain;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using RestSharp.Serializers;
 
 
 namespace ch.hsr.wpf.gadgeothek.service
