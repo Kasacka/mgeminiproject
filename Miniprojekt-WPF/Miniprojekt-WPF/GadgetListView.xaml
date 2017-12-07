@@ -18,9 +18,21 @@
             </ListView.View>
         </ListView>
         <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Margin="10" Width="100" Height="38" Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
-            <Button Margin="10" Width="100" Height="38" Content="Add" Command="{Binding GadgetAddCommand}" />
-            <Button Margin="10" Width="100" Height="38" Content="Edit" Command="{Binding GadgetEditCommand}" />
+            <Button Margin="5" Width="38" Height="38" Command="{Binding GadgetDeleteCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/remove.ico" />
+                </Button.Background>
+            </Button>
+            <Button Margin="5" Width="38" Height="38"  Command="{Binding GadgetAddCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/add.ico"  />
+                </Button.Background>-->
+            </Button>
+            <Button Margin="5" Width="38" Height="38" Command="{Binding GadgetEditCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/pencil.ico" />
+                </Button.Background>
+            </Button>
         </StackPanel>
     </StackPanel>
 </UserControl>
