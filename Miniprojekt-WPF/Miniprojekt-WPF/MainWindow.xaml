@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Miniprojekt_WPF"
         mc:Ignorable="d"
-        Title="Gadgetothek" Height="350" Width="525">
+        Title="Gadgetothek" Height="400" Width="750">
+
+    <Window.Resources>
+        <ResourceDictionary Source="TabControlStyles.xaml"/>
+    </Window.Resources>
+
     <Grid>
-        <TabControl Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TabControl>
             <TabItem Header="Gadgets">
-                <Grid Background="#FFE5E5E5">
-                    <local:GadgetListView />
-                </Grid>
+                <Grid Name="GadgetContent" />
             </TabItem>
             <TabItem Header="Loans">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
                     <local:LoanListView />
                 </Grid>
             </TabItem>

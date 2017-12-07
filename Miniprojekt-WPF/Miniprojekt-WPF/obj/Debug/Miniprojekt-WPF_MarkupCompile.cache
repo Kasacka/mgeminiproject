@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\
 Miniprojekt_WPF
 none
 false
 DEBUG;TRACE
-C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\App.xaml
-5614102504
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\App.xaml
+81158550340
 
-14-338378718
-171627747856
-GadgetAddView.xaml;GadgetDeleteWindow.xaml;GadgetListView.xaml;LoanListView.xaml;MainWindow.xaml;
+151250023285
+161036048648
+ButtonStyles.xaml;GadgetAddView.xaml;GadgetDeleteWindow.xaml;GadgetListView.xaml;ListStyles.xaml;LoanListView.xaml;MainWindow.xaml;TabControlStyles.xaml;
 
 False
 

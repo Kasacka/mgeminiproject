@@ -6,22 +6,22 @@
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
-    
+
     <Style TargetType="{x:Type GridViewColumnHeader}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="White" />
         <Setter Property="Background" Value="#0088AD" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="Height" Value="32" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="40" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
     </Style>
 
     <Style TargetType="{x:Type ListViewItem}">
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="BorderBrush" Value="#0088AD" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Height" Value="32" />
         <Style.Triggers>
-            <!-- setting up triggers for alternate background colors -->
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                 <Setter Property="Background" Value="#f2fcff"></Setter>
             </Trigger>
@@ -29,8 +29,7 @@
                 <Setter Property="Background" Value="White"></Setter>
             </Trigger>
         </Style.Triggers>
-        <!-- setting row height here -->
-        
+
     </Style>
 
 </ResourceDictionary>

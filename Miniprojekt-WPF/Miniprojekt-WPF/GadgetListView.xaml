@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Miniprojekt_WPF"
-             mc:Ignorable="d" Height="297" Width="711">
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ListStyles.xaml"/>
+                <ResourceDictionary Source="ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <StackPanel>
-        <ListView SelectedItem="{Binding SelectedGadget}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GadgetList}" Height="235">
+        <ListView SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}" AlternationCount="2">
             <ListView.View>
                 <GridView AllowsColumnReorder="True">
                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
@@ -18,21 +26,9 @@
             </ListView.View>
         </ListView>
         <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Margin="5" Width="38" Height="38" Command="{Binding GadgetDeleteCommand}">
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/remove.ico" />
-                </Button.Background>
-            </Button>
-            <Button Margin="5" Width="38" Height="38"  Command="{Binding GadgetAddCommand}">
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/add.ico"  />
-                </Button.Background>-->
-            </Button>
-            <Button Margin="5" Width="38" Height="38" Command="{Binding GadgetEditCommand}">
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/pencil.ico" />
-                </Button.Background>
-            </Button>
+            <Button Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
+            <Button Content="Add" Command="{Binding GadgetAddCommand}" />
+            <Button Content="Edit" Command="{Binding GadgetEditCommand}" />
         </StackPanel>
     </StackPanel>
 </UserControl>
