@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Miniprojekt_WPF"
-             mc:Ignorable="d" Height="280" Width="711">
+             mc:Ignorable="d" Height="297" Width="711">
     <StackPanel>
-        <ListView SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}" Height="235">
+        <ListView SelectedItem="{Binding SelectedGadget}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GadgetList}" Height="235">
             <ListView.View>
                 <GridView AllowsColumnReorder="True">
                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
@@ -17,8 +17,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
-        <Button Content="Add" Command="{Binding GadgetAddCommand}" />
-        <Button Content="Edit" Command="{Binding GadgetEditCommand}" />
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Margin="10" Width="100" Height="38" Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
+            <Button Margin="10" Width="100" Height="38" Content="Add" Command="{Binding GadgetAddCommand}" />
+            <Button Margin="10" Width="100" Height="38" Content="Edit" Command="{Binding GadgetEditCommand}" />
+        </StackPanel>
     </StackPanel>
 </UserControl>
