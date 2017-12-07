@@ -4,10 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Miniprojekt_WPF"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ListStyles.xaml"/>
+    </UserControl.Resources>
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="125,57,0,0" VerticalAlignment="Top" Width="75"/>
-
+        <ListView ItemsSource="{Binding LoanList}" AlternationCount="2">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="User" Width="180" DisplayMemberBinding="{Binding Customer.Name}" />
+                    <GridViewColumn Header="Gadget" Width="180" DisplayMemberBinding="{Binding Gadget.Name}"/>
+                    <GridViewColumn Header="Pickup Date" Width="90" DisplayMemberBinding="{Binding PickupDateString}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>
