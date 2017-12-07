@@ -19,6 +19,8 @@ namespace ch.hsr.wpf.gadgeothek.domain
 
         public DateTime? OverDueDate => PickupDate?.AddDays(DaysToReturn);
 
+        public string PickupDateString => PickupDate.Value.ToString("dd.MM.yyyy");
+
         public bool WasReturned => ReturnDate.HasValue;
 
 

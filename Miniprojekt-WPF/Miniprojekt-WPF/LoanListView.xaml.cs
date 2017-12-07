@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,16 @@ using System.Windows.Shapes;
 
 namespace Miniprojekt_WPF
 {
-    /// <summary>
-    /// Interaktionslogik für LoanListView.xaml
-    /// </summary>
     public partial class LoanListView : UserControl
     {
         public LoanListView()
         {
             InitializeComponent();
+
+            if (!DesignerProperties.GetIsInDesignMode(this))
+            {
+                DataContext = new LoanListViewModel();
+            }
         }
     }
 }
