@@ -10,8 +10,7 @@ namespace ch.hsr.wpf.gadgeothek.domain
         public double Price { get; set; }
         public string Manufacturer { get; set; }
         public string Name { get; set; }
-
-
+        
         // parameterless constructor is needed for automatic json conversion
         public Gadget()
         {

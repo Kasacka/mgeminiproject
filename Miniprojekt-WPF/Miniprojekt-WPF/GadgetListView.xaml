@@ -4,12 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Miniprojekt_WPF"
-             mc:Ignorable="d" d:DesignWidth="300" Height="280">
+             mc:Ignorable="d" Height="280" Width="711">
     <StackPanel>
         <ListView SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}" Height="235">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
+                <GridView AllowsColumnReorder="True">
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Condition" Width="120" DisplayMemberBinding="{Binding Condition}" />
+                    <GridViewColumn Header="Price" Width="120" DisplayMemberBinding="{Binding Price}" />
+                    <GridViewColumn Header="Manufactured" Width="120" DisplayMemberBinding="{Binding Manufactured}" />
+                    <GridViewColumn Header="Inventory number" Width="120" DisplayMemberBinding="{Binding InventoryNumber}" />
                 </GridView>
             </ListView.View>
         </ListView>
