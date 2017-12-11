@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:Miniprojekt_WPF"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="Delete Gadget" ResizeMode="NoResize" Height="133.231" Width="300">
+        Title="Delete Gadget" ResizeMode="NoResize" Height="160" Width="300">
     <Window.Resources>
         <ResourceDictionary Source="ButtonStyles.xaml" />
     </Window.Resources>
     <Grid>
         <Label Content="Are you sure that you want to delete this gadget?" />
         <Label />
-        <Button Click="YesClicked" Margin="191,58,10,10">
-            <fa:FontAwesome Icon="Ban" />
-        </Button>
         <Button Click="NoClicked" Margin="95,58,106,10">
             <fa:FontAwesome Icon="Check" />
+        </Button>
+        <Button Click="YesClicked" Margin="191,58,10,10">
+            <fa:FontAwesome Icon="Ban" />
         </Button>
     </Grid>
 </Window>
