@@ -14,44 +14,13 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <!--<DockPanel>
-        <ListView Height="Auto" AlternationCount="2" SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
-            <ListView.View>
-                <GridView AllowsColumnReorder="True">
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Condition" Width="120" DisplayMemberBinding="{Binding Condition}" />
-                    <GridViewColumn Header="Price" Width="120" DisplayMemberBinding="{Binding Price}" />
-                    <GridViewColumn Header="Manufactured" Width="120" DisplayMemberBinding="{Binding Manufactured}" />
-                    <GridViewColumn Header="Inventory number" Width="120" DisplayMemberBinding="{Binding InventoryNumber}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-        <Grid Height="65" FlowDirection="RightToLeft">
-            <Button Command="{Binding GadgetDeleteCommand}" Margin="53,5,519,5">
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/remove.ico" />
-                </Button.Background>
-            </Button>
-            <Button Command="{Binding GadgetAddCommand}" Margin="10,5,562,5">
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/add.ico"  />
-                </Button.Background>
-            </Button>
-            <Button Command="{Binding GadgetEditCommand}" Margin="96,5,476,5">
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/pencil.ico" />
-                </Button.Background>
-            </Button>
-        </Grid>
-    </DockPanel>-->
     <StackPanel>
         <DataGrid SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Condition" Width="*" Binding="{Binding Condition}" />
                 <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}" />
-                <DataGridTextColumn Header="Manufactured" Width="*" Binding="{Binding Manufactured}" />
+                <DataGridTextColumn Header="Manufacturer" Width="*" Binding="{Binding Manufacturer}" />
                 <DataGridTextColumn Header="Inventory number" Width="*" Binding="{Binding InventoryNumber}" />
             </DataGrid.Columns>
         </DataGrid>

@@ -19,12 +19,12 @@
             <TextBox Width="135" Text="{Binding InventoryNumber}" />
         </StackPanel>
         <StackPanel Margin="10"  Orientation="Horizontal">
-            <Label Width="150" Content="Manufacturer:" />
-            <TextBox Width="135" Text="{Binding Manufacturer}" />
-        </StackPanel>
-        <StackPanel Margin="10"  Orientation="Horizontal">
             <Label Width="150" Content="Name:" />
             <TextBox Width="135" Text="{Binding Name}" />
+        </StackPanel>
+        <StackPanel Margin="10"  Orientation="Horizontal">
+            <Label Width="150" Content="Manufacturer:" />
+            <TextBox Width="135" Text="{Binding Manufacturer}" />
         </StackPanel>
         <StackPanel Margin="10"  Orientation="Horizontal">
             <Label Width="150" Content="Price:" />
