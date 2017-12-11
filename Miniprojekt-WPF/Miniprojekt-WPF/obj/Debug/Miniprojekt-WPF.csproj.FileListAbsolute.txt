@@ -58,3 +58,5 @@ C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\Miniprojekt-WPF.c
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\Miniprojekt-WPF.csproj.CoreCompileInputs.cache
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\ButtonStyles.baml
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\TabControlStyles.baml
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.dll
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.xml
