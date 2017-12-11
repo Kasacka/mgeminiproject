@@ -26,3 +26,6 @@ C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\GadgetDeleteWindow.baml
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\GadgetAddView.g.cs
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\GadgetAddView.baml
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\ListStyles.baml
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\ButtonStyles.baml

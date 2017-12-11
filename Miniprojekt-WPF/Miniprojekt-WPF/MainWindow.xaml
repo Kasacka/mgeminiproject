@@ -9,9 +9,7 @@
     <Grid>
         <TabControl Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TabItem Header="Gadgets">
-                <Grid Background="#FFE5E5E5">
-                    <local:GadgetListView />
-                </Grid>
+                <Grid Background="#FFE5E5E5" Name="GadgetContent" />
             </TabItem>
             <TabItem Header="Loans">
                 <Grid Background="#FFE5E5E5">

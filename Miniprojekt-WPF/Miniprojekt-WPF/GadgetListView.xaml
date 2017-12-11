@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Miniprojekt_WPF"
-             mc:Ignorable="d" Height="297" Width="711">
-    <StackPanel>
-        <ListView SelectedItem="{Binding SelectedGadget}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GadgetList}" Height="235">
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ListStyles.xaml"/>
+                <ResourceDictionary Source="ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <ListView Height="Auto" AlternationCount="2" SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
             <ListView.View>
                 <GridView AllowsColumnReorder="True">
                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
@@ -17,22 +25,23 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Margin="5" Width="38" Height="38" Command="{Binding GadgetDeleteCommand}">
+    
+        <Grid Height="65" FlowDirection="RightToLeft">
+            <Button Command="{Binding GadgetDeleteCommand}" Margin="53,5,519,5">
                 <Button.Background>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/remove.ico" />
                 </Button.Background>
             </Button>
-            <Button Margin="5" Width="38" Height="38"  Command="{Binding GadgetAddCommand}">
+            <Button Command="{Binding GadgetAddCommand}" Margin="10,5,562,5">
                 <Button.Background>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/add.ico"  />
-                </Button.Background>-->
+                </Button.Background>
             </Button>
-            <Button Margin="5" Width="38" Height="38" Command="{Binding GadgetEditCommand}">
+            <Button Command="{Binding GadgetEditCommand}" Margin="96,5,476,5">
                 <Button.Background>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/pencil.ico" />
                 </Button.Background>
             </Button>
-        </StackPanel>
-    </StackPanel>
+        </Grid>
+    </DockPanel>
 </UserControl>
