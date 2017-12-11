@@ -70,3 +70,5 @@ C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.x
 >>>>>>> 6e730f3d0a8d4e5b354c4d3599f8740696e6d907
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.dll
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.xml
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\InputFormStyles.baml
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\InputFormStyles.baml
