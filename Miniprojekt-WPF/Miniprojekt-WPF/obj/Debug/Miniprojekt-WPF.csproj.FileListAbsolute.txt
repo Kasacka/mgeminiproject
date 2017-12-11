@@ -65,3 +65,8 @@ C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\ButtonStyles.baml
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\TabControlStyles.baml
 >>>>>>> 68057225f74ec50883842de5f45ae4cdca503d9d
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\obj\Debug\TabControlStyles.baml
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.dll
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.xml
+>>>>>>> 6e730f3d0a8d4e5b354c4d3599f8740696e6d907
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\bin\Debug\FontAwesome.WPF.xml

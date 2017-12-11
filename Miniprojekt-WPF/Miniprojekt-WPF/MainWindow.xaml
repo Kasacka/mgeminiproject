@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Miniprojekt_WPF"
         mc:Ignorable="d"
-        Title="Gadgetothek" Height="400" Width="750">
+        Title="Gadgetothek" Height="450" Width="750">
 
     <Window.Resources>
         <ResourceDictionary Source="TabControlStyles.xaml"/>

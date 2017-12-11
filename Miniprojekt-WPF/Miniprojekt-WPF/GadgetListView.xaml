@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              xmlns:local="clr-namespace:Miniprojekt_WPF"
              mc:Ignorable="d">
     <UserControl.Resources>
@@ -55,9 +56,15 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
-            <Button Content="Add" Command="{Binding GadgetAddCommand}" />
-            <Button Content="Edit" Command="{Binding GadgetEditCommand}" />
+            <Button Command="{Binding GadgetDeleteCommand}">
+                <fa:FontAwesome Icon="TrashOutline" />
+            </Button>
+            <Button Command="{Binding GadgetAddCommand}">
+                <fa:FontAwesome Icon="Plus" />
+            </Button>
+            <Button Command="{Binding GadgetEditCommand}">
+                <fa:FontAwesome Icon="Pencil" />
+            </Button>
         </StackPanel>
     </StackPanel>
 </UserControl>
