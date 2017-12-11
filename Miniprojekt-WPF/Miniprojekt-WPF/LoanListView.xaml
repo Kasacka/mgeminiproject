@@ -9,14 +9,12 @@
         <ResourceDictionary Source="ListStyles.xaml"/>
     </UserControl.Resources>
     <Grid>
-        <ListView ItemsSource="{Binding LoanList}" AlternationCount="2">
-            <ListView.View>
-                <GridView >
-                    <GridViewColumn Header="User" Width="280" DisplayMemberBinding="{Binding Customer.Name}" />
-                    <GridViewColumn Header="Gadget" Width="280" DisplayMemberBinding="{Binding Gadget.Name}"/>
-                    <GridViewColumn Header="Pickup Date" Width="100" DisplayMemberBinding="{Binding PickupDateString}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid ItemsSource="{Binding LoanList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="User" Binding="{Binding Customer.Name}" Width="*" />
+                <DataGridTextColumn Header="Gadget" Binding="{Binding Gadget.Name}" Width="*" />
+                <DataGridTextColumn Header="Pickup Date" Binding="{Binding PickupDateString}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

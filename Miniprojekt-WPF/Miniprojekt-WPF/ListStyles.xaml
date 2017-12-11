@@ -2,12 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Miniprojekt_WPF">
 
-    <Style TargetType="{x:Type ListView}">
-        <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Style TargetType="{x:Type DataGrid}">
+        <Setter Property="AlternationCount" Value="2" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="CanUserSortColumns" Value="True" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#0088AD"/>
+        <Setter Property="VerticalGridLinesBrush" Value="Transparent"/>
     </Style>
 
-    <Style TargetType="{x:Type GridViewColumnHeader}">
+    <Style TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="White" />
         <Setter Property="Background" Value="#0088AD" />
@@ -17,19 +22,24 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
     </Style>
 
-    <Style TargetType="{x:Type ListViewItem}">
-        <Setter Property="BorderThickness" Value="0 0 0 1" />
-        <Setter Property="BorderBrush" Value="#0088AD" />
+    <Style TargetType="{x:Type DataGridCell}">
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style TargetType="{x:Type DataGridRow}">
         <Setter Property="Height" Value="32" />
         <Style.Triggers>
-            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                 <Setter Property="Background" Value="#f2fcff"></Setter>
             </Trigger>
-            <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                 <Setter Property="Background" Value="White"></Setter>
             </Trigger>
         </Style.Triggers>
+    </Style>
 
+    <Style x:Key="dataGridNoSelection" TargetType="{x:Type DataGridRow}">
+        <Setter Property="IsHitTestVisible" Value="False" />
     </Style>
 
 </ResourceDictionary>

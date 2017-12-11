@@ -14,17 +14,15 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <ListView SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}" AlternationCount="2">
-            <ListView.View>
-                <GridView AllowsColumnReorder="True">
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Condition" Width="120" DisplayMemberBinding="{Binding Condition}" />
-                    <GridViewColumn Header="Price" Width="120" DisplayMemberBinding="{Binding Price}" />
-                    <GridViewColumn Header="Manufactured" Width="120" DisplayMemberBinding="{Binding Manufactured}" />
-                    <GridViewColumn Header="Inventory number" Width="120" DisplayMemberBinding="{Binding InventoryNumber}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Condition" Width="*" Binding="{Binding Condition}" />
+                <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Manufactured" Width="*" Binding="{Binding Manufactured}" />
+                <DataGridTextColumn Header="Inventory number" Width="*" Binding="{Binding InventoryNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
         <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
             <Button Content="Add" Command="{Binding GadgetAddCommand}" />

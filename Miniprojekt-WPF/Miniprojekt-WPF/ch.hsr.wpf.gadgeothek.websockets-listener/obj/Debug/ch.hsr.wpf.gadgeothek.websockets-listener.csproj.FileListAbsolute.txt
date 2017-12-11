@@ -9,3 +9,15 @@ C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\Newtonsoft.Json.xml
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.runner.exe
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.runner.exe.config
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.runner.exe
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.dll
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\RestSharp.dll
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\ch.hsr.wpf.gadgeothek.pdb
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.websockets-listener.csprojResolveAssemblyReference.cache
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.websockets-listener.csproj.CoreCompileInputs.cache
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.runner.exe
+C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.websockets-listener\obj\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
