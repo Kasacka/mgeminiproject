@@ -82,12 +82,21 @@ namespace Miniprojekt_WPF
 
         private void OnAddGadget()
         {
-            navigationContext.StartView(new GadgetAddView());
+            navigationContext.StartView(new GadgetAddView(null, OnGadgetListChanged));
         }
 
         private void OnEditGadget()
         {
-            navigationContext.StartView(new GadgetAddView());
+            if (SelectedGadget == null)
+                return;
+
+            navigationContext.StartView(new GadgetAddView(SelectedGadget, OnGadgetListChanged));
+        }
+
+        private void OnGadgetListChanged()
+        {
+            gadgetList.Clear();
+            libraryAdminService.GetAllGadgets().ForEach(gadgetList.Add);
         }
 
         private void OnPropertyChanged([CallerMemberName] string properyName = null)

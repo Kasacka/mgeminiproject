@@ -12,13 +12,24 @@ namespace Miniprojekt_WPF
     {
         private readonly INavigationContext navigationContext;
         private readonly LibraryAdminService libraryAdminService;
-        private readonly Gadget gadget;
+        private Gadget gadget;
+
+        public event Action OnGadgetListChanged;
         
-        public GadgetAddViewModel(INavigationContext navigationContext)
+        public GadgetAddViewModel(INavigationContext navigationContext, Gadget gadget)
         {
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
-            gadget = new Gadget();
+
+            if (gadget == null)
+            {
+                this.gadget = new Gadget();
+            }
+            else
+            {
+                this.gadget = gadget;
+            }
+
             SaveCommand = new DelegateCommand(OnSaveGadget);
             CancelCommand = new DelegateCommand(OnCancel);
 
@@ -74,11 +85,30 @@ namespace Miniprojekt_WPF
         {
             get; private set;
         }
+
+        public void LoadGadget(string inventoryNumber)
+        {
+            gadget = libraryAdminService.GetGadget(inventoryNumber);
+        }
         
+        private bool GadgetExists(Gadget gadget)
+        {
+            return libraryAdminService.GetGadget(gadget.InventoryNumber) != null;
+        }
+
         private void OnSaveGadget()
         {
-            libraryAdminService.AddGadget(gadget);
+            if (GadgetExists(gadget))
+            {
+                libraryAdminService.UpdateGadget(gadget);
+            }
+            else
+            {
+                libraryAdminService.AddGadget(gadget);
+            }
+
             navigationContext.CloseView();
+            OnGadgetListChanged?.Invoke();
         }
 
         private void OnCancel()

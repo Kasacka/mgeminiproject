@@ -13,7 +13,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <DockPanel>
+    <!--<DockPanel>
         <ListView Height="Auto" AlternationCount="2" SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
             <ListView.View>
                 <GridView AllowsColumnReorder="True">
@@ -25,7 +25,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-    
+
         <Grid Height="65" FlowDirection="RightToLeft">
             <Button Command="{Binding GadgetDeleteCommand}" Margin="53,5,519,5">
                 <Button.Background>
@@ -43,5 +43,21 @@
                 </Button.Background>
             </Button>
         </Grid>
-    </DockPanel>
+    </DockPanel>-->
+    <StackPanel>
+        <DataGrid SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Condition" Width="*" Binding="{Binding Condition}" />
+                <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Manufactured" Width="*" Binding="{Binding Manufactured}" />
+                <DataGridTextColumn Header="Inventory number" Width="*" Binding="{Binding InventoryNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Content="Delete" Command="{Binding GadgetDeleteCommand}"  />
+            <Button Content="Add" Command="{Binding GadgetAddCommand}" />
+            <Button Content="Edit" Command="{Binding GadgetEditCommand}" />
+        </StackPanel>
+    </StackPanel>
 </UserControl>

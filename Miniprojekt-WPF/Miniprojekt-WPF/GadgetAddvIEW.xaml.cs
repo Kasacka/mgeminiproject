@@ -1,16 +1,22 @@
-﻿using System.Windows;
+﻿using ch.hsr.wpf.gadgeothek.domain;
+using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Miniprojekt_WPF
 {
     public partial class GadgetAddView : UserControl
     {
-        public GadgetAddView()
+        private readonly GadgetAddViewModel gadgetAddViewModel;
+        
+        public GadgetAddView(Gadget gadget, Action onGadgetListChanged)
         {
             InitializeComponent();
-            DataContext = new GadgetAddViewModel(GetNavigationContext());
+            gadgetAddViewModel = new GadgetAddViewModel(GetNavigationContext(), gadget);
+            gadgetAddViewModel.OnGadgetListChanged += onGadgetListChanged;
+            DataContext = gadgetAddViewModel;
         }
-
+       
         private INavigationContext GetNavigationContext()
         {
             return (INavigationContext) Application.Current.MainWindow;

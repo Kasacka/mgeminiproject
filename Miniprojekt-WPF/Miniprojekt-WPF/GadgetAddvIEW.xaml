@@ -5,16 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Miniprojekt_WPF"
         mc:Ignorable="d" Height="300" Width="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ListStyles.xaml"/>
+                <ResourceDictionary Source="ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <StackPanel>
-        <Label Content="Inventory-Nr:" />
-        <TextBox Text="{Binding InventoryNumber}" />
-        <Label Content="Manufacturer:" />
-        <TextBox Text="{Binding Manufacturer}" />
-        <Label Content="Name:" />
-        <TextBox Text="{Binding Name}" />
-        <Label Content="Price:" />
-        <TextBox Text="{Binding Price}" />
-        <Button Content="Save" Command="{Binding SaveCommand}" />
-        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Label Width="150" Content="Inventory-Nr:" />
+            <TextBox Width="135" Text="{Binding InventoryNumber}" />
+        </StackPanel>
+        <StackPanel Margin="10"  Orientation="Horizontal">
+            <Label Width="150" Content="Manufacturer:" />
+            <TextBox Width="135" Text="{Binding Manufacturer}" />
+        </StackPanel>
+        <StackPanel Margin="10"  Orientation="Horizontal">
+            <Label Width="150" Content="Name:" />
+            <TextBox Width="135" Text="{Binding Name}" />
+        </StackPanel>
+        <StackPanel Margin="10"  Orientation="Horizontal">
+            <Label Width="150" Content="Price:" />
+            <TextBox Width="135" Text="{Binding Price}" />
+        </StackPanel>
+        <StackPanel Margin="10"  Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Content="Save" Command="{Binding SaveCommand}" />
+            <Button Content="Cancel" Command="{Binding CancelCommand}" />
+        </StackPanel>
     </StackPanel>
 </UserControl>
