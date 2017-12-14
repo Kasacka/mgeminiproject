@@ -1,5 +1,4 @@
-﻿using ch.hsr.wpf.gadgeothek.domain;
-using ch.hsr.wpf.gadgeothek.service;
+﻿using ch.hsr.wpf.gadgeothek.service;
 using Miniprojekt_WPF.ViewModel;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
