@@ -1,6 +1,8 @@
 ﻿using ch.hsr.wpf.gadgeothek.domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Miniprojekt_WPF.ViewModel;
 using System;
+using System.Text;
 
 namespace Miniprojekt_WPFTesting
 {
@@ -50,11 +52,9 @@ namespace Miniprojekt_WPFTesting
             var loan = CreateSampleLoan();
             var loanViewModel = new LoanViewModel(loan);
 
-            Assert.AreEqual("Lost", loanViewModel.Condition);
-            Assert.AreEqual("12", loanViewModel.InventoryNumber);
-            Assert.AreEqual(15d, loanViewModel.Price);
-            Assert.AreEqual("IBM", loanViewModel.Manufacturer);
-            Assert.AreEqual("Fisch", loanViewModel.Name);
+            Assert.AreEqual("Test", loanViewModel.CustomerName);
+            Assert.AreEqual("Fisch", loanViewModel.GadgetName);
+            Assert.AreEqual("01.01.2017", loanViewModel.PickupDate);
         }
 
         [TestMethod]
@@ -69,10 +69,10 @@ namespace Miniprojekt_WPFTesting
                 output.Append(eventArgs.PropertyName);
             };
 
-            loanViewModel.Name = "Test";
-            loanViewModel.Manufacturer = "Test";
+            loanViewModel.CustomerName = "Abc";
+            loanViewModel.GadgetName = "Test";
 
-            Assert.AreEqual("NameManufacturer", output.ToString());
+            Assert.AreEqual("CustomerNameGadgetName", output.ToString());
         }
     }
 }
