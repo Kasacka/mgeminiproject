@@ -17,6 +17,10 @@
         <Setter Property="Background" Value="White"/>
     </Style>
 
+    <Style TargetType="{x:Type DockPanel}">
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    
     <Style TargetType="{x:Type UserControl}">
         <Setter Property="Background" Value="White"/>
     </Style>

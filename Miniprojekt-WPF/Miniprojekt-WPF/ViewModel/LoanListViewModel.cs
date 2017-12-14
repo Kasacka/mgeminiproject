@@ -19,7 +19,7 @@ namespace Miniprojekt_WPF
             loanList = new ObservableCollection<LoanViewModel>();
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
-            libraryAdminService.GetAllLoans().Select(loan => new LoanViewModel(loan)).ToList().ForEach(loanList.Add);
+            libraryAdminService.GetAllLoans()?.Select(loan => new LoanViewModel(loan)).ToList().ForEach(loanList.Add);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

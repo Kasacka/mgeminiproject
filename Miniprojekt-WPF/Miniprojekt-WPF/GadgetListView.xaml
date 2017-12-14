@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Miniprojekt_WPF.GadgetListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:local="clr-namespace:Miniprojekt_WPF"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ListStyles.xaml"/>
+                <ResourceDictionary Source="ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <DataGrid SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Condition" Width="*" Binding="{Binding Condition}" />
+                <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Manufacturer" Width="*" Binding="{Binding Manufacturer}" />
+                <DataGridTextColumn Header="Inventory number" Width="*" Binding="{Binding InventoryNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Command="{Binding GadgetDeleteCommand}" IsEnabled="False">
+                <fa:FontAwesome Icon="TrashOutline" />
+            </Button>
+            <Button Command="{Binding GadgetAddCommand}">
+                <fa:FontAwesome Icon="Plus" />
+            </Button>
+            <Button Command="{Binding GadgetEditCommand}">
+                <fa:FontAwesome Icon="Pencil" />
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

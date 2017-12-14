@@ -14,17 +14,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel>
-        <DataGrid SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Condition" Width="*" Binding="{Binding Condition}" />
-                <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}" />
-                <DataGridTextColumn Header="Manufacturer" Width="*" Binding="{Binding Manufacturer}" />
-                <DataGridTextColumn Header="Inventory number" Width="*" Binding="{Binding InventoryNumber}" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button Command="{Binding GadgetDeleteCommand}">
                 <fa:FontAwesome Icon="TrashOutline" />
             </Button>
@@ -35,5 +26,14 @@
                 <fa:FontAwesome Icon="Pencil" />
             </Button>
         </StackPanel>
-    </StackPanel>
+        <DataGrid SelectedItem="{Binding SelectedGadget}" ItemsSource="{Binding GadgetList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Condition" Width="*" Binding="{Binding Condition}" />
+                <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Manufacturer" Width="*" Binding="{Binding Manufacturer}" />
+                <DataGridTextColumn Header="Inventory number" Width="*" Binding="{Binding InventoryNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </UserControl>

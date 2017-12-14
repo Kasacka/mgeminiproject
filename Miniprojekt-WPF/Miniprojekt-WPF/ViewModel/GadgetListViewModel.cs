@@ -21,7 +21,7 @@ namespace Miniprojekt_WPF
             gadgetList = new ObservableCollection<GadgetViewModel>();
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
-            libraryAdminService.GetAllGadgets()
+            libraryAdminService.GetAllGadgets()?
                 .Select(gadget => new GadgetViewModel(gadget))
                 .ToList().ForEach(gadgetList.Add);
 
