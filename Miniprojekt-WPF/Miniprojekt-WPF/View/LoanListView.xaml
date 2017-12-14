@@ -11,9 +11,9 @@
     <Grid>
         <DataGrid ItemsSource="{Binding LoanList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="User" Binding="{Binding Customer.Name}" Width="*" />
-                <DataGridTextColumn Header="Gadget" Binding="{Binding Gadget.Name}" Width="*" />
-                <DataGridTextColumn Header="Pickup Date" Binding="{Binding PickupDateString}" Width="*" />
+                <DataGridTextColumn Header="User" Binding="{Binding CustomerName}" Width="*" />
+                <DataGridTextColumn Header="Gadget" Binding="{Binding GadgetName}" Width="*" />
+                <DataGridTextColumn Header="Pickup Date" Binding="{Binding PickupDate}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
