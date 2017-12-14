@@ -1,5 +1,6 @@
 ﻿using ch.hsr.wpf.gadgeothek.domain;
 using ch.hsr.wpf.gadgeothek.service;
+using Miniprojekt_WPF.ViewModel;
 using System;
 using System.ComponentModel;
 using System.Configuration;
@@ -12,18 +13,18 @@ namespace Miniprojekt_WPF
     {
         private readonly INavigationContext navigationContext;
         private readonly LibraryAdminService libraryAdminService;
-        private Gadget gadget;
+        private GadgetViewModel gadget;
 
         public event Action OnGadgetListChanged;
         
-        public GadgetAddViewModel(INavigationContext navigationContext, Gadget gadget)
+        public GadgetAddViewModel(INavigationContext navigationContext, GadgetViewModel gadget)
         {
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
 
             if (gadget == null)
             {
-                this.gadget = new Gadget();
+                this.gadget = new GadgetViewModel(new Gadget());
             }
             else
             {
@@ -88,10 +89,11 @@ namespace Miniprojekt_WPF
 
         public void LoadGadget(string inventoryNumber)
         {
-            gadget = libraryAdminService.GetGadget(inventoryNumber);
+            gadget = new GadgetViewModel(
+                libraryAdminService.GetGadget(inventoryNumber));
         }
         
-        private bool GadgetExists(Gadget gadget)
+        private bool GadgetExists(GadgetViewModel gadget)
         {
             return libraryAdminService.GetGadget(gadget.InventoryNumber) != null;
         }
@@ -100,11 +102,11 @@ namespace Miniprojekt_WPF
         {
             if (GadgetExists(gadget))
             {
-                libraryAdminService.UpdateGadget(gadget);
+                libraryAdminService.UpdateGadget(gadget.Gadget);
             }
             else
             {
-                libraryAdminService.AddGadget(gadget);
+                libraryAdminService.AddGadget(gadget.Gadget);
             }
 
             navigationContext.CloseView();

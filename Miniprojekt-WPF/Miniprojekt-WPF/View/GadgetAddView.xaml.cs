@@ -1,4 +1,4 @@
-﻿using ch.hsr.wpf.gadgeothek.domain;
+﻿using Miniprojekt_WPF.ViewModel;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,7 +9,7 @@ namespace Miniprojekt_WPF
     {
         private readonly GadgetAddViewModel gadgetAddViewModel;
         
-        public GadgetAddView(Gadget gadget, Action onGadgetListChanged)
+        public GadgetAddView(GadgetViewModel gadget, Action onGadgetListChanged)
         {
             InitializeComponent();
             gadgetAddViewModel = new GadgetAddViewModel(GetNavigationContext(), gadget);

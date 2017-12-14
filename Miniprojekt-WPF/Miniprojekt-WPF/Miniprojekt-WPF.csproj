@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="ViewModel\GadgetAddViewModel.cs" />
+    <Compile Include="ViewModel\GadgetViewModel.cs" />
     <Compile Include="View\GadgetAddView.xaml.cs">
       <DependentUpon>GadgetAddView.xaml</DependentUpon>
     </Compile>

@@ -1,8 +1,10 @@
 ﻿using ch.hsr.wpf.gadgeothek.domain;
 using ch.hsr.wpf.gadgeothek.service;
+using Miniprojekt_WPF.ViewModel;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
@@ -11,16 +13,18 @@ namespace Miniprojekt_WPF
     public class GadgetListViewModel : INotifyPropertyChanged
     {
         private readonly INavigationContext navigationContext;
-        private ObservableCollection<Gadget> gadgetList;
-        private Gadget selectedGadget;
+        private ObservableCollection<GadgetViewModel> gadgetList;
+        private GadgetViewModel selectedGadget;
         private LibraryAdminService libraryAdminService;
         
         public GadgetListViewModel(INavigationContext navigationContext)
         {
-            gadgetList = new ObservableCollection<Gadget>();
+            gadgetList = new ObservableCollection<GadgetViewModel>();
             var serverAddress = ConfigurationManager.AppSettings["server"];
             libraryAdminService = new LibraryAdminService(serverAddress);
-            libraryAdminService.GetAllGadgets().ForEach(gadgetList.Add);
+            libraryAdminService.GetAllGadgets()
+                .Select(gadget => new GadgetViewModel(gadget))
+                .ToList().ForEach(gadgetList.Add);
 
             GadgetDeleteCommand = new DelegateCommand(OnDeleteGadget, CanEditOrDelete);
             GadgetAddCommand = new DelegateCommand(OnAddGadget);
@@ -36,7 +40,7 @@ namespace Miniprojekt_WPF
 
         public event PropertyChangedEventHandler PropertyChanged;
         
-        public ObservableCollection<Gadget> GadgetList
+        public ObservableCollection<GadgetViewModel> GadgetList
         {
             get { return gadgetList; }
             set
@@ -46,7 +50,7 @@ namespace Miniprojekt_WPF
             }
         }
 
-        public Gadget SelectedGadget
+        public GadgetViewModel SelectedGadget
         {
             get { return selectedGadget; }
             set
@@ -80,7 +84,7 @@ namespace Miniprojekt_WPF
 
             if (window.ShowDialog().Value)
             {
-                libraryAdminService.DeleteGadget(SelectedGadget);
+                libraryAdminService.DeleteGadget(SelectedGadget.Gadget);
                 gadgetList.Remove(SelectedGadget);
             }
         }
@@ -101,7 +105,10 @@ namespace Miniprojekt_WPF
         private void OnGadgetListChanged()
         {
             gadgetList.Clear();
-            libraryAdminService.GetAllGadgets().ForEach(gadgetList.Add);
+            libraryAdminService.GetAllGadgets()
+                .Select(gadget => new GadgetViewModel(gadget))
+                .ToList()
+                .ForEach(gadgetList.Add);
         }
 
         private void OnPropertyChanged([CallerMemberName] string properyName = null)
