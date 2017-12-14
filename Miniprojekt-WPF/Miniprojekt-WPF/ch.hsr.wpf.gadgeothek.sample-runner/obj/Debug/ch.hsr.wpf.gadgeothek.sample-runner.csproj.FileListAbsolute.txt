@@ -10,3 +10,15 @@ C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sampl
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.sample-runner.csproj.CoreCompileInputs.cache
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.runner.exe
 C:\Users\HSR\Desktop\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\ch.hsr.wpf.gadgeothek.runner.exe.config
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\ch.hsr.wpf.gadgeothek.runner.exe
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\ch.hsr.wpf.gadgeothek.runner.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\ch.hsr.wpf.gadgeothek.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\Newtonsoft.Json.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\RestSharp.dll
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\ch.hsr.wpf.gadgeothek.pdb
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\bin\Debug\Newtonsoft.Json.xml
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.sample-runner.csprojResolveAssemblyReference.cache
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.sample-runner.csproj.CoreCompileInputs.cache
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.runner.exe
+C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\ch.hsr.wpf.gadgeothek.sample-runner\obj\Debug\ch.hsr.wpf.gadgeothek.runner.pdb

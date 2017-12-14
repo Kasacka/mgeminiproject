@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\WpfProjekt\source\repos\mgeminiproject\Miniprojekt-WPF\Miniprojekt-WPF\App.xaml
-91449485182
+9710075880
 
-151250023285
+15-1744535120
 17-1985736876
-ButtonStyles.xaml;GadgetAddView.xaml;GadgetDeleteWindow.xaml;GadgetListView.xaml;InputFormStyles.xaml;ListStyles.xaml;LoanListView.xaml;MainWindow.xaml;TabControlStyles.xaml;
+Style\ButtonStyles.xaml;View\GadgetAddView.xaml;Window\GadgetDeleteWindow.xaml;View\GadgetListView.xaml;Style\InputFormStyles.xaml;Style\ListStyles.xaml;View\LoanListView.xaml;Window\MainWindow.xaml;Style\TabControlStyles.xaml;
 
 False
 
