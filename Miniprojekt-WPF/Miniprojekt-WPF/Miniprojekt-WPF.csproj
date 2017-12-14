@@ -109,7 +109,6 @@
       <DependentUpon>GadgetListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\GadgetListViewModel.cs" />
-    <Compile Include="ICloseable.cs" />
     <Compile Include="INavigationContext.cs" />
     <Compile Include="View\LoanListView.xaml.cs">
       <DependentUpon>LoanListView.xaml</DependentUpon>
